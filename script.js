@@ -1,60 +1,74 @@
- // Smooth reveal animation
+// Smooth reveal animation
+
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
 
 const revealElements = document.querySelectorAll(
-    ".section, .project-card, .skill-card, .experience-card, .education-card"
+    ".section-heading, .about-grid, .project-card, .skill-card, " +
+    ".experience-card, .education-card, .contact-content"
 );
 
 
-const observer = new IntersectionObserver(
-    (entries) => {
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
 
-        entries.forEach((entry) => {
+    // Add reveal styles dynamically
+    const style = document.createElement("style");
 
-            if (entry.isIntersecting) {
+    style.innerHTML = `
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
 
-                entry.target.classList.add("visible");
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    `;
 
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
-    }
-);
-
-
-revealElements.forEach((element) => {
-
-    element.classList.add("reveal");
-
-    observer.observe(element);
-
-});
+    document.head.appendChild(style);
 
 
-// Add reveal styles dynamically
+    const observer = new IntersectionObserver(
+        (entries) => {
 
-const style = document.createElement("style");
+            entries.forEach((entry) => {
 
-style.innerHTML = `
+                if (entry.isIntersecting) {
 
-.reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+                    const element = entry.target;
+
+                    element.classList.add("visible");
+
+                    // After the animation ends, remove the reveal classes
+                    // so the normal hover effects work again
+                    setTimeout(() => {
+                        element.classList.remove("reveal", "visible");
+                    }, 800);
+
+                    observer.unobserve(element);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    revealElements.forEach((element) => {
+
+        element.classList.add("reveal");
+
+        observer.observe(element);
+
+    });
+
 }
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-`;
-
-document.head.appendChild(style);
