@@ -981,4 +981,141 @@ footer {
         padding: 25px 20px;
     }
 
+
+
+    /* ============================================
+   ADDITIONS: case studies, CV button, mobile menu
+   ============================================ */
+
+/* Project case study (Problem / Data / Approach / Result) */
+.case-study {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.case-study div {
+    padding-left: 14px;
+    border-left: 2px solid #21405e;
+}
+
+.case-study strong {
+    display: block;
+    margin-bottom: 2px;
+
+    color: #5ee7ff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.project-card .case-study p {
+    margin: 0;
+    color: #8d9db2;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.project-card .case-study p.building-note {
+    color: #b8a7ff;
+    font-style: italic;
+}
+
+
+/* About: "How I work" line + CV button */
+.about-text .math-line {
+    margin-top: 28px;
+    margin-bottom: 0;
+    padding: 16px 20px;
+
+    color: #d5e1f0;
+    font-size: 15px;
+
+    border-left: 3px solid #5ee7ff;
+    border-radius: 0 10px 10px 0;
+    background: rgba(94, 231, 255, 0.06);
+}
+
+.btn-cv {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 13px 22px;
+
+    border: 1px solid #5ee7ff;
+    border-radius: 8px;
+
+    color: #5ee7ff;
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-cv:hover {
+    background: #5ee7ff;
+    color: #06101d;
+    transform: translateY(-3px);
+}
+
+
+/* Skills: "Used in" note */
+.skill-card small {
+    display: block;
+    margin-top: 14px;
+
+    color: #5ee7ff;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+
+/* Contact: "Open to..." line */
+.contact-section > .contact-content > p.open-to {
+    margin-bottom: 35px;
+
+    color: #5ee7ff;
+    font-weight: 600;
+}
+
+
+/* Keyboard focus (accessibility) */
+a:focus-visible {
+    outline: 2px solid #5ee7ff;
+    outline-offset: 3px;
+}
+
+
+/* Respect "reduce motion" setting */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
+
+
+/* Mobile: show the menu as a scrollable row instead of hiding it */
+@media (max-width: 850px) {
+
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 14px 20px;
+    }
+
+    nav {
+        display: flex;
+        gap: 22px;
+
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+
+        padding-bottom: 4px;
+    }
+
+}
+
 }
