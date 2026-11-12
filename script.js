@@ -1,74 +1,56 @@
-// Smooth reveal animation
+// Mobile navigation
+const menuToggle = document.querySelector(".menu-toggle");
+const mainNav = document.querySelector(".main-nav");
 
-const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+  });
+
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
+    });
+  });
+}
+
+// Automatically update the footer year
+const year = document.querySelector("#year");
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
+
+// Reveal animation when sections enter the screen
+const reduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
 ).matches;
 
-const revealElements = document.querySelectorAll(
-    ".section-heading, .about-grid, .project-card, .skill-card, " +
-    ".experience-card, .education-card, .contact-content"
-);
+if (!reduceMotion && "IntersectionObserver" in window) {
+  const targets = document.querySelectorAll(
+    ".hero-copy, .hero-art, .section-kicker, .section-heading-row, .about-layout, .skill-card, .project-card, .journey-card, .contact-layout"
+  );
 
-
-if (!prefersReducedMotion && "IntersectionObserver" in window) {
-
-    // Add reveal styles dynamically
-    const style = document.createElement("style");
-
-    style.innerHTML = `
-        .reveal {
-            opacity: 0;
-            transform: translateY(25px);
-            transition:
-                opacity 0.7s ease,
-                transform 0.7s ease;
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          currentObserver.unobserve(entry.target);
         }
+      });
+    },
+    { threshold: 0.12 }
+  );
 
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    `;
-
-    document.head.appendChild(style);
-
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    const element = entry.target;
-
-                    element.classList.add("visible");
-
-                    // After the animation ends, remove the reveal classes
-                    // so the normal hover effects work again
-                    setTimeout(() => {
-                        element.classList.remove("reveal", "visible");
-                    }, 800);
-
-                    observer.unobserve(element);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-    revealElements.forEach((element) => {
-
-        element.classList.add("reveal");
-
-        observer.observe(element);
-
-    });
-
+  targets.forEach((target) => {
+    target.classList.add("reveal");
+    observer.observe(target);
+  });
 }
