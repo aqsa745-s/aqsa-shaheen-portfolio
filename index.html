@@ -1,574 +1,980 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aqsa Shaheen | Data Analyst & Data Scientist</title>
+<title>Aqsa Shaheen | Developer & Data Enthusiast</title>
 
-    <meta name="description"
-          content="Aqsa Shaheen builds forecasting models and analytics dashboards for banking and payments data using Python, SQL and Streamlit.">
+<meta name="description" content="Aqsa Shaheen — Web Development, Data Analytics, Machine Learning and Problem Solving.">
 
-    <!-- Preview when the link is shared on LinkedIn / WhatsApp -->
-    <meta property="og:title" content="Aqsa Shaheen | Data Analyst & Data Scientist">
-    <meta property="og:description" content="Forecasting models and analytics dashboards for banking and payments data.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aqsa745-s.github.io/aqsa-shaheen-portfolio/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --bg:#f7f8fc;
+  --white:#fff;
+  --dark:#18223b;
+  --blue:#586be8;
+  --purple:#9670df;
+  --text:#687287;
+  --border:#e7eaf2;
+}
 
-    <!-- Extra styles for the new parts only. Existing design stays in style.css -->
-    <style>
-        .case-study { margin: 18px 0 6px; display: grid; gap: 10px; }
-        .case-study div { padding-left: 12px; border-left: 2px solid rgba(127,127,127,.45); }
-        .case-study strong { display: block; font-size: .85rem; opacity: .75; margin-bottom: 2px; }
-        .case-study p { margin: 0; line-height: 1.55; }
-        .math-line { margin-top: 18px; padding: 14px 16px; border-left: 3px solid currentColor; opacity: .92; }
-        .skill-card small { display: block; margin-top: 8px; opacity: .7; font-size: .85rem; }
-        .open-to { margin-top: 18px; font-weight: 600; }
-        .btn-cv { display: inline-block; margin-top: 18px; padding: 12px 22px; border: 1px solid currentColor;
-                  border-radius: 8px; text-decoration: none; color: inherit; font-weight: 600; }
-        .building-note { opacity: .8; font-style: italic; }
-        html { scroll-behavior: smooth; }
-        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-    </style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.7;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+.container {
+  width:min(1120px,90%);
+  margin:auto;
+}
+
+/* NAVBAR */
+
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+
+.navbar {
+  height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo {
+  font:800 27px Manrope;
+  color:var(--dark);
+}
+
+.logo span {
+  color:var(--blue);
+}
+
+nav {
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+nav a {
+  font-size:13px;
+  font-weight:700;
+  color:#606b80;
+}
+
+nav a:hover {
+  color:var(--blue);
+}
+
+.nav-button {
+  background:var(--dark);
+  color:white;
+  padding:10px 17px;
+  border-radius:8px;
+}
+
+.menu {
+  display:none;
+  border:0;
+  background:none;
+  font-size:27px;
+  cursor:pointer;
+  color:var(--dark);
+}
+
+/* HERO */
+
+.hero {
+  min-height:620px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:50px;
+  padding-top:65px;
+  padding-bottom:65px;
+}
+
+.eyebrow {
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:20px;
+}
+
+.hero h1 {
+  font:800 clamp(42px,5vw,65px)/1.12 Manrope;
+  letter-spacing:-2px;
+}
+
+.gradient {
+  background:linear-gradient(100deg,var(--blue),var(--purple));
+  color:transparent;
+  background-clip:text;
+  -webkit-background-clip:text;
+}
+
+.hero h2 {
+  font:700 17px Manrope;
+  margin-top:20px;
+  color:#45516a;
+}
+
+.hero p {
+  max-width:550px;
+  color:var(--text);
+  margin-top:20px;
+  font-size:15px;
+}
+
+.buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-top:28px;
+}
+
+.btn {
+  padding:13px 20px;
+  border-radius:8px;
+  font-size:13px;
+  font-weight:700;
+  transition:.3s;
+}
+
+.btn:hover {
+  transform:translateY(-3px);
+}
+
+.primary {
+  background:var(--blue);
+  color:white;
+  box-shadow:0 8px 20px #586be833;
+}
+
+.secondary {
+  border:1px solid var(--border);
+  background:white;
+}
+
+.hero-note {
+  margin-top:25px;
+  color:#929aab;
+  font-size:11px;
+}
+
+/* HERO VISUAL */
+
+.visual {
+  background:#192440;
+  color:white;
+  padding:30px;
+  border-radius:17px;
+  box-shadow:0 25px 60px #26345b30;
+  transform:rotate(2deg);
+}
+
+.visual-top {
+  display:flex;
+  justify-content:space-between;
+  color:#aab6d2;
+  font-size:12px;
+  border-bottom:1px solid #ffffff20;
+  padding-bottom:15px;
+}
+
+.visual h3 {
+  margin-top:25px;
+  font:700 19px Manrope;
+}
+
+.visual p {
+  color:#b9c3d8;
+  font-size:12px;
+  margin-top:8px;
+}
+
+.code-line {
+  margin-top:20px;
+  font:12px/2 monospace;
+  color:#9cdbc0;
+}
+
+.chart {
+  height:115px;
+  display:flex;
+  align-items:end;
+  gap:12px;
+  margin-top:25px;
+  border-bottom:1px solid #ffffff30;
+}
+
+.chart span {
+  flex:1;
+  background:linear-gradient(#a18bea,#5c75eb);
+  border-radius:5px 5px 0 0;
+}
+
+/* SECTIONS */
+
+section:not(.hero) {
+  scroll-margin-top:85px;
+}
+
+.section {
+  padding:90px 0;
+}
+
+.section-label {
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:12px;
+}
+
+.section-title {
+  font:800 clamp(30px,4vw,43px) Manrope;
+  margin-bottom:35px;
+  letter-spacing:-1.5px;
+}
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  gap:45px;
+}
+
+.about-text p {
+  color:var(--text);
+  font-size:14px;
+  margin-bottom:17px;
+  line-height:1.9;
+}
+
+.about-text strong {
+  color:var(--dark);
+}
+
+.profile {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:25px;
+  box-shadow:0 12px 35px #26345b0b;
+}
+
+.profile h3 {
+  font:800 21px Manrope;
+  margin-bottom:15px;
+}
+
+.profile div {
+  padding:12px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.profile div:last-child {
+  border:0;
+}
+
+.profile small {
+  display:block;
+  color:#929aab;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.profile b {
+  font-size:12px;
+}
+
+/* SKILLS */
+
+.skills-section {
+  background:#eef0f8;
+}
+
+.skills-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.skill-card {
+  background:white;
+  border:1px solid var(--border);
+  padding:25px;
+  border-radius:13px;
+  transition:.3s;
+}
+
+.skill-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px #26345b12;
+}
+
+.skill-icon {
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:#edf0ff;
+  color:var(--blue);
+  font-size:20px;
+  margin-bottom:18px;
+}
+
+.skill-card h3 {
+  font:800 16px Manrope;
+  margin-bottom:8px;
+}
+
+.skill-card p {
+  color:var(--text);
+  font-size:12px;
+  min-height:65px;
+}
+
+.tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:15px;
+}
+
+.tags span {
+  background:#f0f2f8;
+  padding:5px 9px;
+  border-radius:5px;
+  font-size:9px;
+  font-weight:700;
+  color:#64708a;
+}
+
+/* PROJECTS */
+
+.projects {
+  display:grid;
+  gap:20px;
+}
+
+.project {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:30px;
+  transition:.3s;
+}
+
+.project:hover {
+  box-shadow:0 15px 40px #26345b12;
+  transform:translateY(-3px);
+}
+
+.project-number {
+  color:var(--blue);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.project h3 {
+  font:800 21px Manrope;
+  margin:12px 0;
+}
+
+.project p {
+  color:var(--text);
+  font-size:13px;
+}
+
+.project-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-top:20px;
+}
+
+.project-links a {
+  color:var(--blue);
+  font-size:12px;
+  font-weight:800;
+}
+
+.project-links a:hover {
+  text-decoration:underline;
+}
+
+.project-note {
+  margin-top:15px;
+  font-size:11px !important;
+  color:#858ca0 !important;
+}
+
+/* EDUCATION */
+
+.education-section {
+  background:#eef0f8;
+}
+
+.education-card {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:28px;
+}
+
+.education-card h3 {
+  font:800 19px Manrope;
+}
+
+.education-card p {
+  color:var(--text);
+  font-size:13px;
+  margin-top:7px;
+}
+
+/* CONTACT */
+
+.contact-section {
+  background:#192440;
+  color:white;
+  padding:85px 0;
+}
+
+.contact-section .section-title {
+  margin-bottom:15px;
+}
+
+.contact-section > .container > p {
+  color:#b8c1d5;
+  font-size:13px;
+  max-width:550px;
+}
+
+.contact-links {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:30px;
+}
+
+.contact-links a {
+  padding:18px;
+  border:1px solid #ffffff25;
+  border-radius:9px;
+  font-size:12px;
+  overflow-wrap:anywhere;
+}
+
+.contact-links a:hover {
+  background:#ffffff10;
+}
+
+.contact-links small {
+  display:block;
+  color:#aebaff;
+  font-size:9px;
+  margin-bottom:7px;
+  font-weight:800;
+}
+
+footer {
+  background:#131c32;
+  color:#aab4c9;
+  text-align:center;
+  padding:22px;
+  font-size:11px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px) {
+  .hero {
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .about-grid {
+    grid-template-columns:1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .contact-links {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px) {
+  .navbar {
+    height:65px;
+  }
+
+  .menu {
+    display:block;
+  }
+
+  nav {
+    display:none;
+    position:absolute;
+    top:65px;
+    left:0;
+    width:100%;
+    padding:20px;
+    background:white;
+    flex-direction:column;
+    align-items:stretch;
+    gap:17px;
+    border-bottom:1px solid var(--border);
+  }
+
+  nav.open {
+    display:flex;
+  }
+
+  .hero {
+    padding-top:65px;
+  }
+
+  .hero h1 {
+    font-size:43px;
+  }
+
+  .skills-grid {
+    grid-template-columns:1fr;
+  }
+
+  .section {
+    padding:65px 0;
+  }
+
+  .project {
+    padding:22px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="nav-container">
-
-            <a href="#home" class="logo">
-                Aqsa<span>.</span>
-            </a>
-
-            <nav>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-        </div>
-    </header>
-
-
-    <!-- HERO -->
-    <section id="home" class="hero">
-
-        <div class="hero-content">
-
-            <p class="small-title">DATA ANALYTICS • DATA SCIENCE</p>
-
-            <h1>
-                Hi, I'm <span>Aqsa Shaheen.</span>
-            </h1>
-
-            <h2>Data Analyst + Data Scientist</h2>
-
-            <p class="hero-text">
-                I turn banking and payments data into forecasts and
-                decisions, using Python, SQL, machine learning and
-                interactive dashboards.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#projects" class="btn primary">
-                    View Projects
-                </a>
-
-                <a href="#contact" class="btn secondary">
-                    Contact Me
-                </a>
-            </div>
-
-        </div>
-
-
-        <!-- DATA VISUAL -->
-        <div class="hero-visual">
-
-            <div class="dashboard-card">
-
-                <div class="card-top">
-                    <span>Analytics</span>
-                    <span class="status">● Live</span>
-                </div>
-
-                <div class="chart">
-
-                    <div class="bar bar1"></div>
-                    <div class="bar bar2"></div>
-                    <div class="bar bar3"></div>
-                    <div class="bar bar4"></div>
-                    <div class="bar bar5"></div>
-
-                    <div class="trend"></div>
-
-                </div>
-
-                <div class="chart-info">
-                    <div>
-                        <small>Domain</small>
-                        <strong>Banking & Payments</strong>
-                    </div>
-
-                    <div>
-                        <small>Focus</small>
-                        <strong>Forecasting</strong>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-
-        <div class="section-heading">
-            <p>01 — ABOUT ME</p>
-        </div>
-
-        <div class="about-grid">
-
-            <div class="about-text">
-
-                <p>
-                    I am <strong>Aqsa Shaheen</strong>, a data analyst
-                    and data scientist based in Multan, Pakistan. I work
-                    with banking and payments data to find patterns,
-                    forecast trends and build dashboards that people can
-                    actually use.
-                </p>
-
-                <p>
-                    My foundation is mathematics (BS, Bahauddin Zakariya
-                    University, CASPAM). I use statistical modeling and
-                    time-series thinking together with Python, SQL and
-                    machine learning to solve practical problems.
-                </p>
-
-                <p class="math-line">
-                    How I work: define the problem clearly, model it
-                    with sound mathematics, and deliver the result as
-                    something interactive.
-                </p>
-
-                <a href="Aqsa-Shaheen-CV.pdf" class="btn-cv" target="_blank">
-                    Download CV (PDF)
-                </a>
-
-            </div>
-
-
-            <div class="about-card">
-
-                <div class="about-item">
-                    <span>Focus</span>
-                    <strong>Banking & Payments Analytics</strong>
-                </div>
-
-                <div class="about-item">
-                    <span>Strengths</span>
-                    <strong>Statistical Modeling, Forecasting</strong>
-                </div>
-
-                <div class="about-item">
-                    <span>Degree</span>
-                    <strong>BS Mathematics, BZU Multan</strong>
-                </div>
-
-                <div class="about-item">
-                    <span>Location</span>
-                    <strong>Multan, Pakistan</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SKILLS -->
-    <section id="skills" class="section dark-section">
-
-        <div class="section-heading">
-            <p>02 — SKILLS</p>
-            <h2>Tools & Areas I Work With.</h2>
-        </div>
-
-
-        <div class="skills-grid">
-
-            <div class="skill-card">
-                <span class="skill-number">01</span>
-                <h3>Python</h3>
-                <p>
-                    Data analysis, automation and analytical workflows.
-                </p>
-                <small>Used in: Digital Banking Analytics</small>
-            </div>
-
-
-            <div class="skill-card">
-                <span class="skill-number">02</span>
-                <h3>Pandas & NumPy</h3>
-                <p>
-                    Data cleaning, transformation and numerical analysis.
-                </p>
-                <small>Used in: Digital Banking Analytics</small>
-            </div>
-
-
-            <div class="skill-card">
-                <span class="skill-number">03</span>
-                <h3>SQL</h3>
-                <p>
-                    Querying data and working with structured datasets.
-                </p>
-                <small>Used in: Account Opening Dashboard</small>
-            </div>
-
-
-            <div class="skill-card">
-                <span class="skill-number">04</span>
-                <h3>Machine Learning</h3>
-                <p>
-                    Forecasting and predictive modeling (Scikit-learn).
-                </p>
-                <small>Used in: both projects</small>
-            </div>
-
-
-            <div class="skill-card">
-                <span class="skill-number">05</span>
-                <h3>Data Visualization</h3>
-                <p>
-                    Converting analytical results into clear, readable charts.
-                </p>
-                <small>Used in: both projects</small>
-            </div>
-
-
-            <div class="skill-card">
-                <span class="skill-number">06</span>
-                <h3>Streamlit</h3>
-                <p>
-                    Building and deploying interactive analytics dashboards.
-                </p>
-                <small>Live: Digital Banking Analytics</small>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-
-        <div class="section-heading">
-            <p>03 — PROJECTS</p>
-            <h2>Selected Work.</h2>
-        </div>
-
-
-        <div class="projects-grid">
-
-
-            <!-- COMPLETED PROJECT -->
-            <article class="project-card featured">
-
-                <div class="project-top">
-                    <span class="project-status completed">
-                        COMPLETED PROJECT
-                    </span>
-
-                    <span class="project-number">
-                        01
-                    </span>
-                </div>
-
-                <h3>
-                    Pakistan Digital Banking & Payment Analytics
-                    + ML-Based Forecasting
-                </h3>
-
-                <p>
-                    An interactive analytics project on Pakistan's
-                    digital banking and payment data, combined with
-                    machine learning based forecasting.
-                </p>
-
-                <!-- TODO: add your real data source, model name and result below -->
-                <div class="case-study">
-                    <div>
-                        <strong>Problem</strong>
-                        <p>Understand how digital banking and payments are growing in Pakistan and where they are heading next.</p>
-                    </div>
-                    <div>
-                        <strong>Data</strong>
-                        <p>Pakistan digital banking and payment statistics (add source and time period here).</p>
-                    </div>
-                    <div>
-                        <strong>Approach</strong>
-                        <p>Cleaned and explored the data in Python, built forecasting models, and published the results in an interactive Streamlit dashboard.</p>
-                    </div>
-                    <div>
-                        <strong>Result</strong>
-                        <p>A live dashboard where users explore trends and forecasts (add your key finding or accuracy number here).</p>
-                    </div>
-                </div>
-
-
-                <div class="tags">
-                    <span>Python</span>
-                    <span>Data Analytics</span>
-                    <span>Machine Learning</span>
-                    <span>Streamlit</span>
-                    <span>Visualization</span>
-                </div>
-
-
-                <div class="project-links">
-
-                    <a
-                        href="https://pakistan-digitalbankinganalytics-5tms8zbdrftkty9nnwpwva.streamlit.app/"
-                        target="_blank" rel="noopener"
-                    >
-                        Live Dashboard ↗
-                    </a>
-
-                    <a
-                        href="https://github.com/aqsa745-s/Pakistan-Digital_Banking_Analytics.git"
-                        target="_blank" rel="noopener"
-                    >
-                        GitHub ↗
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- IN PROGRESS PROJECT -->
-            <article class="project-card">
-
-                <div class="project-top">
-                    <span class="project-status progress">
-                        IN PROGRESS
-                    </span>
-
-                    <span class="project-number">
-                        02
-                    </span>
-                </div>
-
-                <h3>
-                    Bank Account Opening & Customer Analytics
-                    Dashboard
-                </h3>
-
-                <p>
-                    A banking analytics dashboard that studies the
-                    account opening process, customer insights and
-                    predicts processing time.
-                </p>
-
-                <div class="case-study">
-                    <div>
-                        <strong>Problem</strong>
-                        <p>Find where account opening slows down and predict how long each application will take.</p>
-                    </div>
-                    <div>
-                        <strong>Currently building</strong>
-                        <p class="building-note">Data preparation, prediction model and dashboard.</p>
-                    </div>
-                </div>
-
-
-                <div class="tags">
-                    <span>Python</span>
-                    <span>Analytics</span>
-                    <span>Dashboard</span>
-                    <span>Prediction</span>
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section dark-section">
-
-        <div class="section-heading">
-            <p>04 — EXPERIENCE</p>
-            <h2>Banking Domain Experience.</h2>
-        </div>
-
-
-        <div class="experience-card">
-
-            <div class="experience-left">
-
-                <span class="experience-label">
-                    BANKING EXPERIENCE
-                </span>
-
-                <h3>
-                    Banking Operations — Bank of Punjab (BOP)
-                </h3>
-
-            </div>
-
-
-            <div class="experience-right">
-
-                <p>
-                    Worked inside branch operations, seeing account
-                    opening, documentation and customer handling from
-                    the inside. This is the process knowledge behind my
-                    banking analytics projects, including the account
-                    opening dashboard.
-                </p>
-
-                <div class="experience-tags">
-                    <span>Account Opening</span>
-                    <span>Process Understanding</span>
-                    <span>Documentation</span>
-                    <span>Customer Operations</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EDUCATION -->
-    <section id="education" class="section">
-
-        <div class="section-heading">
-            <p>05 — EDUCATION</p>
-            <h2>Academic Background.</h2>
-        </div>
-
-
-        <div class="education-card">
-
-            <div class="education-icon">
-                ∑
-            </div>
-
-            <div>
-
-                <span class="education-label">
-                    BS MATHEMATICS
-                </span>
-
-                <h3>
-                    Bahauddin Zakariya University
-                </h3>
-
-                <p>
-                    CASPAM — Center for Advanced Studies in Pure
-                    and Applied Mathematics
-                </p>
-
-                <span class="location">
-                    Multan, Pakistan
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-
-        <div class="contact-content">
-
-            <p class="small-title">06 — CONTACT</p>
-
-            <h2>
-                Let's connect and build
-                something meaningful with data.
-            </h2>
-
-            <p>
-                Interested in data analytics, machine learning,
-                predictive modeling or collaboration?
-                Feel free to connect with me.
-            </p>
-
-            <p class="open-to">
-                Open to data analyst and data science opportunities.
-            </p>
-
-
-            <div class="contact-links">
-
-                <a href="mailto:aqsashaheen745@gmail.com">
-                    <span>Email</span>
-                    aqsashaheen745@gmail.com
-                </a>
-
-
-                <a
-                    href="https://www.linkedin.com/in/aqsa-shaheen-9600b03b6"
-                    target="_blank" rel="noopener"
-                >
-                    <span>LinkedIn</span>
-                    linkedin.com/in/aqsa-shaheen-9600b03b6
-                </a>
-
-
-                <a
-                    href="https://github.com/aqsa745-s"
-                    target="_blank" rel="noopener"
-                >
-                    <span>GitHub</span>
-                    github.com/aqsa745-s
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            © 2026 Aqsa Shaheen
-        </p>
-
-        <p>
-            Data Analyst + Data Scientist
-        </p>
-
-    </footer>
-
-
-    <script src="script.js"></script>
+<header>
+  <div class="container navbar">
+    <a href="#home" class="logo">Aqsa<span>.</span></a>
+
+    <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact" class="nav-button">Contact ↗</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="container hero" id="home">
+
+  <div>
+    <div class="eyebrow">HELLO, I'M AQSA SHAHEEN</div>
+
+    <h1>
+      Building ideas into
+      <span class="gradient">digital solutions.</span>
+    </h1>
+
+    <h2>Web Developer · Data Analyst · ML Enthusiast</h2>
+
+    <p>
+      I am a BS Mathematics student passionate about Web Development,
+      Data Analytics, Data Science, Machine Learning, and Problem Solving.
+      I enjoy learning new technologies and building practical solutions
+      through hands-on projects.
+    </p>
+
+    <div class="buttons">
+      <a href="#projects" class="btn primary">Explore My Projects ↗</a>
+      <a href="#contact" class="btn secondary">Contact Me</a>
+    </div>
+
+    <div class="hero-note">
+      Based in Multan, Pakistan · Always Learning & Building
+    </div>
+  </div>
+
+  <div class="visual">
+    <div class="visual-top">
+      <span>MY WORKSPACE</span>
+      <span>● Learning</span>
+    </div>
+
+    <h3>Curiosity + Technology</h3>
+
+    <p>Exploring ideas and turning them into practical projects.</p>
+
+    <div class="code-line">
+      &gt; Web Development<br>
+      &gt; Data Analytics<br>
+      &gt; Machine Learning<br>
+      &gt; Problem Solving<br>
+      &gt; Keep Learning...
+    </div>
+
+    <div class="chart">
+      <span style="height:35%"></span>
+      <span style="height:55%"></span>
+      <span style="height:43%"></span>
+      <span style="height:75%"></span>
+      <span style="height:62%"></span>
+      <span style="height:95%"></span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section container" id="about">
+
+  <div class="section-label">01 — ABOUT ME</div>
+  <h2 class="section-title">Who I Am</h2>
+
+  <div class="about-grid">
+
+    <div class="about-text">
+
+      <p>
+        I am <strong>Aqsa Shaheen</strong>, a BS Mathematics student
+        at Bahauddin Zakariya University, Pakistan.
+        My academic background has developed my analytical thinking,
+        logical reasoning, and problem-solving abilities.
+      </p>
+
+      <p>
+        I am interested in becoming a versatile technology professional.
+        My main areas of interest include
+        <strong>Website Development, Data Analytics, Data Science,
+        and Machine Learning.</strong>
+      </p>
+
+      <p>
+        I am continuously developing my skills through practical learning,
+        coding practice, and academic projects. I enjoy exploring data,
+        discovering patterns, building websites, and finding technology-based
+        solutions to real-world problems.
+      </p>
+
+      <p>
+        My goal is to grow as a Web Developer and Data Scientist while
+        creating useful, meaningful, and user-friendly digital solutions.
+      </p>
+
+    </div>
+
+    <div class="profile">
+      <h3>Profile Details</h3>
+
+      <div>
+        <small>EDUCATION</small>
+        <b>BS Mathematics</b>
+      </div>
+
+      <div>
+        <small>UNIVERSITY</small>
+        <b>Bahauddin Zakariya University</b>
+      </div>
+
+      <div>
+        <small>LOCATION</small>
+        <b>Multan, Pakistan</b>
+      </div>
+
+      <div>
+        <small>CAREER INTERESTS</small>
+        <b>Web Development · Data Science · ML</b>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="section skills-section" id="skills">
+<div class="container">
+
+  <div class="section-label">02 — SKILLS & INTERESTS</div>
+  <h2 class="section-title">What I'm Learning & Exploring</h2>
+
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-icon">⌘</div>
+      <h3>Web Development</h3>
+      <p>Creating responsive websites and learning to build useful user experiences.</p>
+      <div class="tags">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">▥</div>
+      <h3>Data Analytics</h3>
+      <p>Working with data to discover patterns, insights, and meaningful information.</p>
+      <div class="tags">
+        <span>Python</span><span>Pandas</span><span>NumPy</span><span>SQL</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">✳</div>
+      <h3>Machine Learning</h3>
+      <p>Exploring machine learning algorithms and applying them to practical datasets.</p>
+      <div class="tags">
+        <span>Scikit-learn</span><span>Clustering</span><span>Forecasting</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">⌁</div>
+      <h3>Data Science</h3>
+      <p>Combining mathematics, statistics, data analysis, and modeling.</p>
+      <div class="tags">
+        <span>Statistics</span><span>Visualization</span><span>Modeling</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">◎</div>
+      <h3>Problem Solving</h3>
+      <p>Using logical and mathematical thinking to understand and solve challenges.</p>
+      <div class="tags">
+        <span>Logic</span><span>Mathematics</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">▤</div>
+      <h3>Dashboards & Applications</h3>
+      <p>Presenting data insights through interactive dashboards and applications.</p>
+      <div class="tags">
+        <span>Streamlit</span><span>Visualization</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section class="section container" id="projects">
+
+  <div class="section-label">03 — MY PROJECTS</div>
+  <h2 class="section-title">Projects & Practical Work</h2>
+
+  <div class="projects">
+
+    <article class="project">
+      <div class="project-number">PROJECT 01 · ACADEMIC PROJECT</div>
+
+      <h3>Retail Demand Intelligence & Inventory Decision Support System</h3>
+
+      <p>
+        An academic data analytics and machine learning project focused
+        on understanding retail product demand patterns and supporting
+        inventory planning decisions.
+      </p>
+
+      <div class="tags">
+        <span>Python</span><span>Pandas</span><span>K-Means</span>
+        <span>Forecasting</span><span>ABC-XYZ</span><span>Streamlit</span>
+      </div>
+
+      <p class="project-note">
+        Includes demand analysis, product segmentation, forecasting,
+        and scenario-based Safety Stock and Reorder Point estimates.
+        This is an academic prototype; real operational use requires
+        actual stock and supplier data.
+      </p>
+    </article>
+
+    <article class="project">
+      <div class="project-number">PROJECT 02 · DATA ANALYTICS</div>
+
+      <h3>Pakistan Digital Banking & Payment Analytics</h3>
+
+      <p>
+        An analytics project exploring digital banking and payment
+        trends in Pakistan through data analysis, visualization,
+        and forecasting.
+      </p>
+
+      <div class="tags">
+        <span>Python</span><span>Data Analytics</span>
+        <span>Forecasting</span><span>Streamlit</span>
+      </div>
+
+      <div class="project-links">
+        <a href="https://pakistan-digitalbankinganalytics-5tms8zbdrftkty9nnwpwva.streamlit.app/"
+           target="_blank" rel="noopener">Live Dashboard ↗</a>
+
+        <a href="https://github.com/aqsa745-s/Pakistan-Digital_Banking_Analytics"
+           target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-number">PROJECT 03 · IN PROGRESS</div>
+
+      <h3>Bank Account Opening & Customer Analytics Dashboard</h3>
+
+      <p>
+        A developing project focused on analyzing account-opening
+        processes, customer-related information, and processing-time insights.
+      </p>
+
+      <div class="tags">
+        <span>Python</span><span>Data Analysis</span>
+        <span>Dashboard</span><span>Prediction</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section class="section education-section" id="education">
+<div class="container">
+
+  <div class="section-label">04 — EDUCATION</div>
+  <h2 class="section-title">My Academic Background</h2>
+
+  <div class="education-card">
+    <h3>BS Mathematics</h3>
+    <p>Bahauddin Zakariya University</p>
+    <p>CASPAM — Center for Advanced Studies in Pure and Applied Mathematics</p>
+    <p>Multan, Pakistan</p>
+  </div>
+
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="section container" id="experience">
+
+  <div class="section-label">05 — EXPERIENCE</div>
+  <h2 class="section-title">Additional Experience</h2>
+
+  <div class="education-card">
+    <h3>Banking Operations — Bank of Punjab (BOP)</h3>
+    <p>
+      Practical exposure to banking operations, account-opening procedures,
+      documentation, and customer handling. This experience also helped
+      me understand real business processes.
+    </p>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section" id="contact">
+<div class="container">
+
+  <div class="section-label">06 — CONTACT</div>
+
+  <h2 class="section-title">
+    Let's Connect & Build Something Meaningful.
+  </h2>
+
+  <p>
+    I am interested in learning opportunities, practical projects,
+    and collaborations related to Web Development, Data Analytics,
+    and Machine Learning.
+  </p>
+
+  <div class="contact-links">
+
+    <a href="mailto:aqsashaheen745@gmail.com">
+      <small>EMAIL</small>
+      aqsashaheen745@gmail.com
+    </a>
+
+    <a href="https://www.linkedin.com/in/aqsa-shaheen-9600b03b6"
+       target="_blank" rel="noopener">
+      <small>LINKEDIN</small>
+      Connect with me ↗
+    </a>
+
+    <a href="https://github.com/aqsa745-s"
+       target="_blank" rel="noopener">
+      <small>GITHUB</small>
+      Explore my projects ↗
+    </a>
+
+  </div>
+</div>
+</section>
+
+<footer>
+  © <span id="year"></span> Aqsa Shaheen · Learning, Building & Growing.
+</footer>
+
+<script>
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+
+document.querySelectorAll("#nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+  });
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
 
 </body>
 </html>
