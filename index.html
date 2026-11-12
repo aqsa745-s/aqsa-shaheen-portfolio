@@ -7,9 +7,31 @@
     <title>Aqsa Shaheen | Data Analyst & Data Scientist</title>
 
     <meta name="description"
-          content="Portfolio of Aqsa Shaheen — Data Analyst & Data Scientist, BS Mathematics at Bahauddin Zakariya University.">
+          content="Aqsa Shaheen builds forecasting models and analytics dashboards for banking and payments data using Python, SQL and Streamlit.">
+
+    <!-- Preview when the link is shared on LinkedIn / WhatsApp -->
+    <meta property="og:title" content="Aqsa Shaheen | Data Analyst & Data Scientist">
+    <meta property="og:description" content="Forecasting models and analytics dashboards for banking and payments data.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aqsa745-s.github.io/aqsa-shaheen-portfolio/">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Extra styles for the new parts only. Existing design stays in style.css -->
+    <style>
+        .case-study { margin: 18px 0 6px; display: grid; gap: 10px; }
+        .case-study div { padding-left: 12px; border-left: 2px solid rgba(127,127,127,.45); }
+        .case-study strong { display: block; font-size: .85rem; opacity: .75; margin-bottom: 2px; }
+        .case-study p { margin: 0; line-height: 1.55; }
+        .math-line { margin-top: 18px; padding: 14px 16px; border-left: 3px solid currentColor; opacity: .92; }
+        .skill-card small { display: block; margin-top: 8px; opacity: .7; font-size: .85rem; }
+        .open-to { margin-top: 18px; font-weight: 600; }
+        .btn-cv { display: inline-block; margin-top: 18px; padding: 12px 22px; border: 1px solid currentColor;
+                  border-radius: 8px; text-decoration: none; color: inherit; font-weight: 600; }
+        .building-note { opacity: .8; font-style: italic; }
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
 </head>
 
 <body>
@@ -49,9 +71,9 @@
             <h2>Data Analyst + Data Scientist</h2>
 
             <p class="hero-text">
-                Mathematics graduate building a professional path in
-                Data Analytics, Data Science, Machine Learning and
-                Predictive Modeling.
+                I turn banking and payments data into forecasts and
+                decisions, using Python, SQL, machine learning and
+                interactive dashboards.
             </p>
 
             <div class="hero-buttons">
@@ -91,13 +113,13 @@
 
                 <div class="chart-info">
                     <div>
-                        <small>Data</small>
-                        <strong>Analytics</strong>
+                        <small>Domain</small>
+                        <strong>Banking & Payments</strong>
                     </div>
 
                     <div>
                         <small>Focus</small>
-                        <strong>ML Models</strong>
+                        <strong>Forecasting</strong>
                     </div>
                 </div>
 
@@ -120,24 +142,29 @@
             <div class="about-text">
 
                 <p>
-                    I am <strong>Aqsa Shaheen</strong>, a BS Mathematics
-                    graduate from Bahauddin Zakariya University,
-                    Multan, with an academic background from CASPAM
-                    (Center for Advanced Studies in Pure and Applied Mathematics).
+                    I am <strong>Aqsa Shaheen</strong>, a data analyst
+                    and data scientist based in Multan, Pakistan. I work
+                    with banking and payments data to find patterns,
+                    forecast trends and build dashboards that people can
+                    actually use.
                 </p>
 
                 <p>
-                    My career direction is focused on Data Analytics
-                    and Data Science, where I combine mathematical
-                    thinking with Python, data visualization,
-                    machine learning and predictive modeling.
+                    My foundation is mathematics (BS, Bahauddin Zakariya
+                    University, CASPAM). I use statistical modeling and
+                    time-series thinking together with Python, SQL and
+                    machine learning to solve practical problems.
                 </p>
 
-                <p>
-                    I enjoy transforming raw data into meaningful
-                    insights and building practical analytical
-                    solutions for real-world problems.
+                <p class="math-line">
+                    How I work: define the problem clearly, model it
+                    with sound mathematics, and deliver the result as
+                    something interactive.
                 </p>
+
+                <a href="Aqsa-Shaheen-CV.pdf" class="btn-cv" target="_blank">
+                    Download CV (PDF)
+                </a>
 
             </div>
 
@@ -145,18 +172,18 @@
             <div class="about-card">
 
                 <div class="about-item">
+                    <span>Focus</span>
+                    <strong>Banking & Payments Analytics</strong>
+                </div>
+
+                <div class="about-item">
+                    <span>Strengths</span>
+                    <strong>Statistical Modeling, Forecasting</strong>
+                </div>
+
+                <div class="about-item">
                     <span>Degree</span>
-                    <strong>BS Mathematics</strong>
-                </div>
-
-                <div class="about-item">
-                    <span>University</span>
-                    <strong>Bahauddin Zakariya University</strong>
-                </div>
-
-                <div class="about-item">
-                    <span>Department</span>
-                    <strong>CASPAM</strong>
+                    <strong>BS Mathematics, BZU Multan</strong>
                 </div>
 
                 <div class="about-item">
@@ -188,6 +215,7 @@
                 <p>
                     Data analysis, automation and analytical workflows.
                 </p>
+                <small>Used in: Digital Banking Analytics</small>
             </div>
 
 
@@ -197,6 +225,7 @@
                 <p>
                     Data cleaning, transformation and numerical analysis.
                 </p>
+                <small>Used in: Digital Banking Analytics</small>
             </div>
 
 
@@ -206,6 +235,7 @@
                 <p>
                     Querying data and working with structured datasets.
                 </p>
+                <small>Used in: Account Opening Dashboard</small>
             </div>
 
 
@@ -213,8 +243,9 @@
                 <span class="skill-number">04</span>
                 <h3>Machine Learning</h3>
                 <p>
-                    Predictive modeling and practical ML applications.
+                    Forecasting and predictive modeling (Scikit-learn).
                 </p>
+                <small>Used in: both projects</small>
             </div>
 
 
@@ -222,8 +253,9 @@
                 <span class="skill-number">05</span>
                 <h3>Data Visualization</h3>
                 <p>
-                    Converting analytical results into clear visuals.
+                    Converting analytical results into clear, readable charts.
                 </p>
+                <small>Used in: both projects</small>
             </div>
 
 
@@ -231,8 +263,9 @@
                 <span class="skill-number">06</span>
                 <h3>Streamlit</h3>
                 <p>
-                    Building interactive data analytics dashboards.
+                    Building and deploying interactive analytics dashboards.
                 </p>
+                <small>Live: Digital Banking Analytics</small>
             </div>
 
         </div>
@@ -271,10 +304,30 @@
                 </h3>
 
                 <p>
-                    An interactive analytics project focused on
-                    Pakistan's digital banking and payment data,
-                    combined with machine learning based forecasting.
+                    An interactive analytics project on Pakistan's
+                    digital banking and payment data, combined with
+                    machine learning based forecasting.
                 </p>
+
+                <!-- TODO: add your real data source, model name and result below -->
+                <div class="case-study">
+                    <div>
+                        <strong>Problem</strong>
+                        <p>Understand how digital banking and payments are growing in Pakistan and where they are heading next.</p>
+                    </div>
+                    <div>
+                        <strong>Data</strong>
+                        <p>Pakistan digital banking and payment statistics (add source and time period here).</p>
+                    </div>
+                    <div>
+                        <strong>Approach</strong>
+                        <p>Cleaned and explored the data in Python, built forecasting models, and published the results in an interactive Streamlit dashboard.</p>
+                    </div>
+                    <div>
+                        <strong>Result</strong>
+                        <p>A live dashboard where users explore trends and forecasts (add your key finding or accuracy number here).</p>
+                    </div>
+                </div>
 
 
                 <div class="tags">
@@ -290,14 +343,14 @@
 
                     <a
                         href="https://pakistan-digitalbankinganalytics-5tms8zbdrftkty9nnwpwva.streamlit.app/"
-                        target="_blank"
+                        target="_blank" rel="noopener"
                     >
                         Live Dashboard ↗
                     </a>
 
                     <a
                         href="https://github.com/aqsa745-s/Pakistan-Digital_Banking_Analytics.git"
-                        target="_blank"
+                        target="_blank" rel="noopener"
                     >
                         GitHub ↗
                     </a>
@@ -326,10 +379,21 @@
                 </h3>
 
                 <p>
-                    A banking analytics dashboard focused on account
-                    opening processes, customer insights and
-                    processing-time prediction.
+                    A banking analytics dashboard that studies the
+                    account opening process, customer insights and
+                    predicts processing time.
                 </p>
+
+                <div class="case-study">
+                    <div>
+                        <strong>Problem</strong>
+                        <p>Find where account opening slows down and predict how long each application will take.</p>
+                    </div>
+                    <div>
+                        <strong>Currently building</strong>
+                        <p class="building-note">Data preparation, prediction model and dashboard.</p>
+                    </div>
+                </div>
 
 
                 <div class="tags">
@@ -337,15 +401,6 @@
                     <span>Analytics</span>
                     <span>Dashboard</span>
                     <span>Prediction</span>
-                </div>
-
-
-                <div class="project-links">
-
-                    <span class="coming-soon">
-                        GitHub — Coming Soon
-                    </span>
-
                 </div>
 
             </article>
@@ -360,7 +415,7 @@
 
         <div class="section-heading">
             <p>04 — EXPERIENCE</p>
-            <h2>Practical Banking Exposure.</h2>
+            <h2>Banking Domain Experience.</h2>
         </div>
 
 
@@ -382,18 +437,18 @@
             <div class="experience-right">
 
                 <p>
-                    Gaining practical exposure to branch banking
-                    operations, including customer dealing,
-                    account opening procedures, document handling
-                    and supporting day-to-day operational activities
-                    under supervision.
+                    Worked inside branch operations, seeing account
+                    opening, documentation and customer handling from
+                    the inside. This is the process knowledge behind my
+                    banking analytics projects, including the account
+                    opening dashboard.
                 </p>
 
                 <div class="experience-tags">
-                    <span>Customer Dealing</span>
                     <span>Account Opening</span>
+                    <span>Process Understanding</span>
                     <span>Documentation</span>
-                    <span>Branch Operations</span>
+                    <span>Customer Operations</span>
                 </div>
 
             </div>
@@ -462,6 +517,10 @@
                 Feel free to connect with me.
             </p>
 
+            <p class="open-to">
+                Open to data analyst and data science opportunities.
+            </p>
+
 
             <div class="contact-links">
 
@@ -473,7 +532,7 @@
 
                 <a
                     href="https://www.linkedin.com/in/aqsa-shaheen-9600b03b6"
-                    target="_blank"
+                    target="_blank" rel="noopener"
                 >
                     <span>LinkedIn</span>
                     linkedin.com/in/aqsa-shaheen-9600b03b6
@@ -482,7 +541,7 @@
 
                 <a
                     href="https://github.com/aqsa745-s"
-                    target="_blank"
+                    target="_blank" rel="noopener"
                 >
                     <span>GitHub</span>
                     github.com/aqsa745-s
