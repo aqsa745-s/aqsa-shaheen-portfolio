@@ -200,3 +200,86 @@ button{font:inherit}
  .contact-panel{padding:26px 20px}.footer-inner{align-items:flex-start;flex-direction:column;gap:8px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+
+/* ---------- Professional polish & responsive refinements ---------- */
+:root{
+  --paper:#f5f6fa;
+  --white:#ffffff;
+  --ink:#151b2b;
+  --muted:#657087;
+  --line:#e3e7ef;
+  --blue:#5368d8;
+  --blue-dark:#3d50b7;
+  --coral:#e58b72;
+  --pale:#eef0ff;
+  --shadow:0 18px 48px rgba(25,35,65,.09);
+}
+body{font-size:15px}
+.header{background:rgba(248,249,252,.94);border-bottom-color:#e5e8f0}
+.logo{font-size:27px}
+.nav-links{gap:clamp(17px,2.4vw,32px)}
+.nav-links a{font-size:13px}
+.hero{background:linear-gradient(120deg,#111a31 0%,#202c4a 58%,#29365a 100%)}
+.hero:after{background:#6879ec;opacity:.28}
+.hero h1 span,.section-heading h2 span{color:#7788f2}
+.hero h2 span{color:#e99a80}
+.btn-primary{background:#6476e8;box-shadow:0 12px 30px #6476e833}
+.btn-primary:hover{background:#7888f2}
+.section-kicker{color:#5368d8;letter-spacing:1.8px}
+.services-section,.projects-section{background:#eef1f7}
+.service-card,.skill-card,.highlight-card,.project-card{box-shadow:0 8px 24px rgba(26,36,65,.035)}
+.service-card:hover,.skill-card:hover,.project-card:hover,.highlight-card:hover{box-shadow:0 18px 38px rgba(26,36,65,.10)}
+.service-status,.timeline-date{color:#4054bd;background:#eef0ff;border-color:#dce1ff}
+.skill-tags span,.project-tags span{color:#4054bd;background:#f0f2ff;border-color:#e0e4ff}
+.featured-project{background:linear-gradient(135deg,#202b49,#2b385a);border-color:#354263}
+.contact-section{background:#121b31}
+.contact-panel{background:radial-gradient(circle at 90% 0%,#7181e94a,transparent 38%),linear-gradient(125deg,#263452,#1b2945 70%,#303d60);border-color:#465477}
+.footer{background:#10182a}
+:focus-visible{outline:3px solid #8795ff;outline-offset:4px;border-radius:5px}
+@media(max-width:760px){
+  .header{height:70px}
+  .navbar{position:relative}
+  .menu-toggle{display:block;width:44px;height:44px;border:1px solid #dfe3ee;border-radius:12px;background:#fff}
+  .menu-toggle span{width:20px;margin:5px auto;transition:transform .2s,opacity .2s}
+  .nav-links{display:none;position:absolute;top:calc(100% + 1px);left:-19px;right:-19px;padding:13px 22px 20px;background:#fbfcff;border:1px solid #e5e8f0;border-top:0;border-radius:0 0 18px 18px;box-shadow:0 18px 35px #17213b1c;flex-direction:column;align-items:stretch;gap:2px}
+  .nav-links.open{display:flex}
+  .nav-links li a{display:block;padding:12px 8px;font-size:14px}
+  .nav-links .nav-contact{display:inline-flex;width:max-content;margin:8px 0 0;padding:11px 18px}
+  .hero{padding:65px 0 28px;min-height:auto}
+  .hero-grid{gap:12px}
+  .hero-content{max-width:650px}
+  .hero-description{font-size:15px;line-height:1.85}
+  .hero-visual{min-height:420px}
+  .section{padding:76px 0}
+  .section-heading h2{letter-spacing:-1.8px}
+  .section-description{font-size:14px}
+  .about-lead p:not(.large-copy),.service-card p,.skill-card p,.project-content p{font-size:13px}
+}
+@media(max-width:480px){
+  .container,.hero-grid,.hero-bottom-line{width:calc(100% - 34px)}
+  .hero{padding-top:54px}
+  .hero h1{font-size:clamp(52px,13vw,68px);letter-spacing:-3.5px}
+  .hero h2{font-size:clamp(27px,7vw,34px)}
+  .eyebrow{font-size:8px;letter-spacing:1.2px;padding:8px 10px}
+  .hero-actions{gap:10px}
+  .btn{padding:13px 17px;font-size:11px}
+  .hero-socials{gap:20px;flex-wrap:wrap}
+  .hero-visual{min-height:365px}
+  .visual-dashboard{width:100%;padding:18px}
+  .dashboard-metrics{gap:6px}
+  .metric-tile{min-width:0}
+  .metric-tile strong{font-size:9px}
+  .hero-bottom-line{font-size:8px;letter-spacing:.8px}
+  .section{padding:64px 0}
+  .section-heading h2{font-size:clamp(31px,8vw,39px);letter-spacing:-1.5px}
+  .services-grid,.skills-grid{grid-template-columns:1fr}
+  .service-card,.skill-card{padding:22px}
+  .project-card{padding:19px;grid-template-columns:minmax(0,1fr) 22px}
+  .project-meta{font-size:8px;gap:8px}
+  .project-content h3{font-size:20px}
+  .contact-panel{padding:25px 19px;border-radius:19px}
+  .contact-copy h2{font-size:34px;letter-spacing:-1.5px}
+  .contact-detail a,.contact-detail p{font-size:12px;overflow-wrap:anywhere}
+  .footer-inner p{font-size:10px}
+}
