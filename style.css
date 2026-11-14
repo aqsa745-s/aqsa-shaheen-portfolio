@@ -1116,3 +1116,37 @@ button {
 .skill-level { display:inline-block; margin-top:13px; color:#68788d; font-size:10px; font-weight:700; letter-spacing:.3px; }
 @media (max-width:950px) { .services-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:600px) { .services-grid { grid-template-columns:1fr; } .service-card p { min-height:0; } }
+
+
+/* MODERN PORTFOLIO REFRESH */
+:root {
+  --navy:#111827; --navy-dark:#0b1220; --blue:#6d5dfc;
+  --blue-light:#efedff; --background:#f6f7fb; --surface:#ffffff;
+  --text:#273247; --muted:#68758b; --border:#e5e8f0;
+  --shadow:0 22px 60px rgba(26,35,60,.10);
+}
+body { background:#fff; color:var(--text); }
+.header { background:rgba(255,255,255,.86); border-bottom:1px solid rgba(229,232,240,.8); }
+.logo span,.section-heading h2 span { color:var(--blue); }
+.nav-links a:hover,.hero-socials a:hover { color:var(--blue); }
+.hero { background:radial-gradient(circle at 82% 24%,rgba(109,93,252,.13),transparent 30%),linear-gradient(135deg,#fbfbff 0%,#f4f6ff 58%,#fff 100%); }
+.hero h2 { color:#34405a; }
+.hero h2 span { color:var(--blue); }
+.btn-primary { background:var(--blue); box-shadow:0 10px 24px rgba(109,93,252,.22); }
+.btn-primary:hover { background:#5545e8; }
+.btn-outline { border-radius:8px; }
+.visual-card { background:linear-gradient(145deg,#151c36,#29265d 75%,#5145a8); border-radius:20px; }
+.floating-tag { border:1px solid #ecebff; border-radius:10px; }
+.about-section,.services-section,.projects-section,.contact-section { background:#f7f8fc; }
+.highlight-card,.service-card,.skill-card,.project-card,.github-callout { border-radius:14px; }
+.highlight-card:hover,.service-card:hover,.skill-card:hover,.project-card:hover { border-color:#c7c1ff; }
+.highlight-icon,.service-icon { background:#efedff; color:var(--blue); border-radius:12px; }
+.service-card { padding:28px; box-shadow:0 8px 28px rgba(20,30,60,.035); }
+.service-card p { min-height:78px; }
+.service-status { background:#f1efff; color:#5849d6; border-radius:20px; }
+.skill-tags span,.project-tags span { background:#efedff; color:#5547c8; border-radius:20px; padding:6px 11px; }
+.featured-project { background:linear-gradient(130deg,#151c36,#29265d); }
+.contact-panel { background:linear-gradient(125deg,#151c36,#30286e); border-radius:20px; }
+.btn-light { border-radius:8px; }
+.footer { background:#0b1220; }
+@media(max-width:720px) { .hero { background:linear-gradient(160deg,#f6f5ff,#fff 75%); } .service-card p { min-height:0; } }
