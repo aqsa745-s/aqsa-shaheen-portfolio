@@ -1102,3 +1102,17 @@ button {
     transform: none;
   }
 }
+
+/* SERVICES & PORTFOLIO POLISH */
+.services-section { background: #f7f9fc; }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }
+.service-card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:25px; transition:.25s ease; }
+.service-card:hover { transform:translateY(-5px); border-color:#a9c1db; box-shadow:var(--shadow); }
+.service-icon { display:grid; place-items:center; width:43px; height:43px; border-radius:8px; background:var(--blue-light); color:var(--blue); font-size:23px; }
+.service-card h3 { color:var(--navy); font:700 17px "Manrope",sans-serif; margin-top:19px; }
+.service-card p { color:var(--muted); font-size:13px; margin-top:9px; min-height:84px; }
+.service-status { display:inline-block; margin-top:15px; color:#41648a; background:var(--blue-light); padding:5px 9px; border-radius:4px; font-size:10px; font-weight:700; }
+.services-note { color:var(--muted); font-size:12px; margin-top:22px; }
+.skill-level { display:inline-block; margin-top:13px; color:#68788d; font-size:10px; font-weight:700; letter-spacing:.3px; }
+@media (max-width:950px) { .services-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:600px) { .services-grid { grid-template-columns:1fr; } .service-card p { min-height:0; } }
