@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio repository.
 
-I am a final-year BS Mathematics student at Bahauddin Zakariya University, Multan, Pakistan. I am developing practical skills at the intersection of data, artificial intelligence, software, and mathematical problem-solving.
+I work at the intersection of data, artificial intelligence, software, and mathematical problem-solving, with a focus on practical digital solutions.
 
 **Professional direction:** AI-Powered Data & Solutions Engineer  
 **Focus:** Data Analytics · AI & Machine Learning · Automation · Software Solutions · Business Intelligence · Mathematical Optimization
@@ -11,7 +11,7 @@ My goal is to understand real-world challenges and build practical, data-informe
 
 ## About Me
 
-My Mathematics background is strengthening my analytical thinking, logical reasoning, statistics, and interest in optimization. I am building my technical capabilities through structured learning and hands-on projects.
+My foundation in mathematics and statistics supports analytical thinking, logical reasoning, and an interest in optimization. I apply this perspective through practical technology and data projects.
 
 I share work in progress transparently. Technologies listed as learning or exploring are not presented as professional expertise.
 
@@ -59,13 +59,6 @@ A learning project focused on presenting a bank account-opening process through 
 - AI workflow automation and API integration
 - Mathematical optimization and decision-support methods
 
-## Education
-
-**BS Mathematics — In Progress**  
-Bahauddin Zakariya University  
-College of Arts and Social Sciences / CASPAM  
-Multan, Pakistan
-
 ## Experience
 
 **Bank of Punjab — Banking Operations Exposure**
@@ -81,6 +74,6 @@ Practical exposure to branch banking operations, including customer dealing, acc
 
 ---
 
-This portfolio is a record of my learning and project development. Project descriptions and skill levels are kept transparent and updated as work progresses.
+This portfolio presents my services, professional focus, and selected project work. Project scope and capabilities are described transparently.
 
 © 2026 Aqsa Shaheen
