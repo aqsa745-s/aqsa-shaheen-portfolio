@@ -1548,3 +1548,114 @@ h1,h2,h3,h4,.logo,.btn{font-family:var(--font-display)}
  .footer-inner{align-items:flex-start;flex-direction:column;gap:10px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+
+/* DISTINCT MIDNIGHT / COBALT / AQUA PALETTE */
+:root{
+  --navy:#eef4ff;
+  --navy-dark:#080d19;
+  --blue:#4d8dff;
+  --blue-light:#172944;
+  --background:#0a1020;
+  --surface:#111c30;
+  --text:#eaf1ff;
+  --muted:#a3b1c9;
+  --border:#263752;
+  --shadow:0 22px 60px rgba(0,0,0,.36);
+}
+html,body{background:#0a1020!important;color:#eaf1ff}
+.header{background:rgba(8,13,25,.94)!important;border-color:#24334d!important}
+.logo,.footer .logo{color:#f3f6ff}.logo span,.footer .logo span{color:#42cce8}
+.nav-links a{color:#b4c1d8}.nav-links a:hover{color:#42cce8}
+.nav-links .nav-contact{background:transparent;color:#edf4ff;border:1px solid #3866a7;box-shadow:0 0 22px #397cff12}
+.nav-links .nav-contact:hover{background:#172a49;color:#fff!important}
+.menu-toggle span{background:#edf4ff}
+.hero{background:#0a1020!important}
+.hero:before{background:
+ radial-gradient(ellipse at 78% 38%,#245bba35,transparent 34%),
+ radial-gradient(ellipse at 14% 82%,#1bb8d51a,transparent 34%),
+ linear-gradient(125deg,#0a1020 0%,#0d172a 58%,#091426 100%)!important}
+.eyebrow{background:#101d33;border:1px solid #254a72;color:#55d8ec;border-radius:4px}
+.status-dot{background:#42cce8;box-shadow:0 0 0 5px #42cce820}
+.hero-intro{color:#aab8d0}
+.hero h1{color:#f2f6ff}.hero h1 span{background:linear-gradient(100deg,#568aff 5%,#32cce6 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h2{color:#e8efff}.hero h2 span{background:linear-gradient(90deg,#568aff,#32cce6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-description{color:#a9b7cf}
+.btn{border-radius:7px}
+.btn-primary{background:linear-gradient(105deg,#3978f5,#22b9d7);border:0;color:#fff;box-shadow:0 12px 30px #267de733}
+.btn-primary:hover{background:linear-gradient(105deg,#4c89ff,#39cde8);box-shadow:0 15px 34px #267de744}
+.btn-outline{border:1px solid #2b3b56;color:#eaf1ff;background:#101a2b}
+.btn-outline:hover{border-color:#438ee4;background:#152640}
+.hero-socials a{color:#aebbd2}.hero-socials a:hover{color:#42cce8}
+.hero-bottom-line{border-color:#263650;color:#899bb8}
+.hero-bottom-line a{color:#42cce8}
+.visual-dashboard{background:linear-gradient(145deg,#172846,#101c31 72%,#102d43);border:1px solid #31547d;box-shadow:16px 20px 0 #398cff18,0 35px 85px #0009}
+.visual-dashboard:before{border-color:#65cde51c;box-shadow:0 0 0 30px #65cde508,0 0 0 60px #65cde505}
+.dashboard-overline,.focus-label{color:#55d8ec}
+.dashboard-head h3,.focus-copy strong{color:#f0f5ff}
+.dashboard-head h3 span{color:#42cce8}
+.dashboard-live{color:#8de7f2;border-color:#4b7ca13d}
+.dashboard-live i{background:#42cce8}
+.dashboard-focus{border-color:#ffffff20}
+.focus-copy small{color:#aabbd4}
+.focus-ring{background:conic-gradient(#438bff 0 72%,#ffffff1c 72% 100%)}
+.focus-ring:before{background:#172b49}.focus-ring span{color:#eaf7ff}
+.ring-dot{background:#42cce8;border-color:#172b49}
+.metric-tile{background:#0d192b;border:1px solid #2b4667;border-radius:7px}
+.metric-icon{color:#42cce8}.metric-tile strong{color:#edf4ff}.metric-tile small{color:#9fb1ce}
+.dashboard-foot{border-color:#ffffff20;color:#9db2ce}.foot-mark{color:#55d8ec}
+.orbit-one{border-color:#438bff35}.orbit-two{border-color:#42cce82e}
+.floating-tag{background:#14233a;color:#edf4ff;border:1px solid #345276;box-shadow:0 12px 32px #0008;border-radius:6px}
+.floating-tag span,.visual-spark{color:#42cce8}
+.section{background:#0a1020!important;color:#eaf1ff}
+.about-section,.skills-section,.journey-section{background:#0a1020!important}
+.services-section,.contact-section{background:#0d1728!important}
+.projects-section{background:#101a2c!important}
+.section-heading h2{color:#edf3ff}
+.section-heading h2 span{color:#4d9bff}
+.section-kicker{color:#42cce8}
+.section-description,.about-lead p:not(.large-copy){color:#a2b1ca}
+.large-copy{color:#eaf1ff}
+.highlight-card,.service-card,.skill-card,.project-card,.github-callout{
+ background:#111e32!important;border:1px solid #293d5b!important;border-radius:9px;
+ box-shadow:0 12px 34px #0003;color:#eaf1ff
+}
+.highlight-card:hover,.service-card:hover,.skill-card:hover,.project-card:hover{
+ border-color:#438ee4!important;box-shadow:0 18px 42px #0005,0 0 0 1px #42cce812
+}
+.highlight-icon,.service-icon{background:#172f50;color:#55d8ec;border-radius:7px}
+.highlight-card h3,.service-card h3,.skill-card h3{color:#edf4ff}
+.highlight-card p,.service-card p,.skill-card p{color:#a3b2ca}
+.service-status,.skill-tags span,.project-tags span{background:#172d4a;color:#91dff0;border:1px solid #2c5278;border-radius:4px}
+.skill-card-top,.project-number,.project-meta{color:#55cde5}
+.featured-project{background:linear-gradient(125deg,#17345b,#10243d 75%,#12334a)!important;border-color:#315c8b!important}
+.featured-project .project-number,.featured-project .project-meta{color:#70d9ed}
+.featured-project .project-content h3{color:#f1f6ff}
+.featured-project .project-content p{color:#b8c8df}
+.featured-project .project-tags span{background:#1b3d63;color:#a7eafa;border-color:#35658e}
+.featured-project .project-note{color:#b9d9e8}
+.project-links a,.text-link{color:#55cde5}
+.project-links a:hover,.text-link:hover{color:#8baeff}
+.github-callout p{color:#dce8fa}
+.journey-title,.timeline-item h4{color:#eaf2ff}
+.timeline-item{border-color:#2c405e}
+.timeline-dot{background:#42cce8;border-color:#1b4260}
+.timeline-label{color:#55cde5}
+.timeline-place{color:#b0c5df!important}
+.timeline-item p{color:#a3b2ca}
+.timeline-date{background:#172f50;color:#91dff0;border-radius:4px}
+.contact-panel{background:linear-gradient(125deg,#17345b,#10243d 70%,#12334a)!important;border:1px solid #315c8b;border-radius:10px;box-shadow:12px 12px 0 #398cff18}
+.contact-copy .section-kicker,.contact-detail span{color:#55d8ec}
+.contact-copy h2{color:#f0f5ff}.contact-copy h2 span{color:#42cce8}
+.contact-copy p{color:#b8c8df}
+.btn-light{background:linear-gradient(105deg,#3978f5,#22b9d7);color:#fff;border-radius:7px}
+.contact-detail{border-color:#ffffff24}
+.contact-detail a,.contact-detail p{color:#eaf2ff}
+.contact-detail a:hover{color:#42cce8}
+.footer{background:#070c17!important;color:#9eafc9;border-top:1px solid #263752}
+.nav-links{background:#0d1728}
+@media(max-width:720px){
+ .hero{background:#0a1020!important}
+ .nav-links{background:#0d1728!important;border-color:#293f5b!important}
+ .contact-panel{box-shadow:7px 7px 0 #398cff18}
+}
