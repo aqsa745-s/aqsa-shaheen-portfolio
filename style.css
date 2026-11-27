@@ -435,3 +435,15 @@ body{background:#29252B!important;color:#F5F0EA!important;font-family:'DM Sans',
  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
  .reveal{opacity:1!important;transform:none!important}
 }
+
+/* Services section added for clear, beginner-appropriate offerings */
+.service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:28px}
+.service-card{background:var(--panel);border:1px solid var(--line);padding:clamp(22px,3vw,32px);position:relative;min-height:205px}
+.service-card:before{content:"";position:absolute;left:0;top:0;width:54px;height:2px;background:var(--lime)}
+.service-card>span,.service-card>small{font:9px var(--mono);letter-spacing:1px;color:var(--lime)}
+.service-card h3{font-size:clamp(21px,2.5vw,29px);letter-spacing:-1px;margin:18px 0 10px}
+.service-card p{font-size:13px;line-height:1.8;color:var(--muted);max-width:520px}
+.service-card>small{display:block;margin-top:20px;color:#c4c9b7}
+.tool-level{display:block;margin-top:16px;color:var(--lime)}
+.tool-level i{display:none}
+@media(max-width:700px){.service-grid{grid-template-columns:1fr}.service-card{min-height:0}}
