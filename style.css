@@ -458,3 +458,9 @@ body{background:#29252B!important;color:#F5F0EA!important;font-family:'DM Sans',
 .breakdown-steps small{display:block;color:var(--muted);font-size:10px;line-height:1.55}
 .compact-breakdown{margin:22px 0 5px}
 @media(max-width:700px){.breakdown-steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:16px}}
+
+/* Expanded services and skills grids */
+.tool-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.tool-grid,.service-grid{grid-template-columns:1fr}}
