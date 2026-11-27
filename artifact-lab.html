@@ -39,6 +39,26 @@ footer{background:#29252B!important;border-color:#514750!important;color:#B9ADB4
 footer a{color:#C99BA6!important}
 @media(max-width:760px){.top{padding:18px 22px!important}.nav{gap:14px!important}.nav a{font-size:9px!important}}
 
+
+/* Shared portfolio system: same palette, typography, navigation and spacing as the home page */
+:root{--bg:#29252B;--panel:#353039;--panel2:#403944;--ink:#F5F0EA;--muted:#B9ADB4;--lime:#C99BA6;--line:#514750;--mono:'DM Mono',monospace;--display:'DM Sans',sans-serif}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&family=DM+Mono:wght@400;500&display=swap');
+body{background:#29252B!important;color:#F5F0EA!important;font-family:'DM Sans',sans-serif!important}
+.top{background:rgba(41,37,43,.97)!important;border-color:#514750!important;min-height:78px;padding:18px 5.5vw!important;backdrop-filter:blur(18px);z-index:100}
+.brand,.brand span{color:#F5F0EA!important}.brand span{color:#C99BA6!important}
+nav,.nav{align-items:center;gap:clamp(12px,2vw,28px)!important}
+nav a,.nav a,.back,.link{font:10px 'DM Mono',monospace!important;letter-spacing:1px;color:#DED5CE!important;text-decoration:none}
+nav a:hover,.nav a:hover,.back:hover,.link:hover{color:#C99BA6!important}
+main{max-width:1200px!important;padding:55px 5.5vw 100px!important}
+.hero{border-color:#514750!important}.hero h1{font-family:'DM Sans',sans-serif!important;font-weight:700!important;letter-spacing:-.075em!important}
+.hero h1 em,h2 em{color:#C99BA6!important;font-family:'Playfair Display',serif!important;font-style:italic!important}
+.eyebrow,.label,.visual small,.step b,th{color:#C99BA6!important}
+.lead{color:#D4C9D0!important}.visual,.hero-visual{background:radial-gradient(circle at 50% 45%,#715765,#353039 72%)!important;border-color:#766475!important}
+.section{border-color:#514750!important}.section>p,.card p,.card li,td{color:#C9BDC5!important}
+.card,.step,.note,.tool,.method-card{background:#403944!important;border-color:#5A4D5A!important}
+.note{border-left-color:#C99BA6!important;color:#E4D9DF!important}.note strong{color:#C99BA6!important}
+th,td{border-color:#514750!important}footer{background:#29252B!important;border-color:#514750!important;color:#B9ADB4!important}footer a{color:#C99BA6!important}
+@media(max-width:760px){.top{padding:16px 22px!important}.nav,nav{gap:12px!important}.nav a,nav a{font-size:8px!important}main{padding:35px 22px 75px!important}.hero{grid-template-columns:1fr!important}.hero h1{font-size:clamp(52px,13vw,82px)!important}}
 </style>
 </head>
 <body>
