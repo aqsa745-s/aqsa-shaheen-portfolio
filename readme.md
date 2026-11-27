@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio repository.
 
-I am a final-year BS Mathematics student in Pakistan, building practical skills through projects in data analytics, machine learning, AI and software development.
+I am an aspiring AI & Data Solutions Engineer based in Pakistan, building practical skills through projects in data analytics, machine learning, AI and software development.
 
 **Career direction:** AI & Data Solutions Engineering  
 **Current focus:** Excel · Python · Data Analysis · SQL · Machine Learning Fundamentals · Streamlit · Mathematical Thinking
