@@ -12,6 +12,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style id="mobile-nav-visibility-fix">
+@media (max-width: 700px) {
+  header.site-header { display:flex!important; flex-direction:column!important; align-items:stretch!important; height:auto!important; min-height:0!important; padding:14px 18px 8px!important; gap:8px!important; overflow:visible!important; }
+  header.site-header nav.nav-links { display:flex!important; visibility:visible!important; opacity:1!important; position:static!important; width:100%!important; max-width:100%!important; flex-direction:row!important; flex-wrap:nowrap!important; justify-content:flex-start!important; align-items:center!important; gap:18px!important; padding:10px 2px 12px!important; margin:0!important; overflow-x:auto!important; overflow-y:hidden!important; white-space:nowrap!important; background:transparent!important; border:0!important; border-bottom:1px solid #383848!important; -webkit-overflow-scrolling:touch!important; }
+  header.site-header nav.nav-links a { display:inline-flex!important; visibility:visible!important; opacity:1!important; flex:0 0 auto!important; white-space:nowrap!important; font-size:10px!important; padding:6px 0!important; color:#f7f7fb!important; }
+  header.site-header .menu-toggle, header.site-header .header-note { display:none!important; }
+}
+</style>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
