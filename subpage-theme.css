@@ -49,3 +49,15 @@ footer{padding:26px 5.5vw!important;border-top:1px solid var(--sub-line)!importa
 footer a{color:var(--sub-cyan)!important}
 @media(max-width:800px){.hero{grid-template-columns:1fr!important}.cards,.method-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.steps{grid-template-columns:repeat(2,minmax(0,1fr))!important}.top{padding:16px 22px!important}}
 @media(max-width:560px){.top{align-items:flex-start!important;flex-direction:column!important;gap:12px!important}.nav,nav{gap:10px 14px!important}.nav a,nav a{font-size:8px!important}main{padding:35px 22px 75px!important}.hero{padding:38px 0 45px!important}.hero h1{font-size:clamp(48px,13vw,75px)!important}.section,.method{padding:42px 0!important}.cards,.method-grid,.steps{grid-template-columns:1fr!important}.fields{grid-template-columns:1fr!important}table{font-size:11px!important}td,th{padding:9px 6px!important}}
+
+
+/* Identical global navigation across Home, About, Skills, Projects, Deliver, Contact, Experience and detail pages */
+.site-header{position:sticky!important;top:0!important;z-index:100!important;min-height:78px!important;padding:14px 4vw!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;flex-wrap:wrap!important;background:rgba(8,9,13,.96)!important;border-bottom:1px solid #30303f!important;backdrop-filter:blur(18px)!important}
+.site-header .brand{color:#fff!important;font:800 19px 'Manrope',sans-serif!important;letter-spacing:-.6px!important;text-decoration:none!important;white-space:nowrap!important}
+.site-header .header-note{font:800 8px 'Inter',sans-serif!important;letter-spacing:1.2px!important;color:#35d9ff!important;white-space:nowrap!important}
+.site-header .nav-links{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:clamp(8px,1.15vw,17px)!important;flex-wrap:wrap!important;position:static!important;background:transparent!important;border:0!important;padding:0!important}
+.site-header .nav-links a{font:800 8px 'Inter',sans-serif!important;letter-spacing:.75px!important;color:#c5c5d3!important;text-decoration:none!important;white-space:nowrap!important;padding:7px 0!important;transition:color .2s ease!important}
+.site-header .nav-links a:hover,.site-header .nav-links a:focus{color:#35d9ff!important}
+.site-header .nav-links .nav-cta{background:#35d9ff!important;color:#08090d!important;padding:9px 12px!important;border-radius:5px!important}
+@media(max-width:1120px){.site-header{justify-content:center!important}.site-header .nav-links{justify-content:center!important}}
+@media(max-width:700px){.site-header{position:relative!important;gap:10px!important;padding:15px 18px!important;justify-content:center!important}.site-header .header-note{display:none!important}.site-header .nav-links{display:flex!important;justify-content:center!important;gap:7px 13px!important}.site-header .nav-links a{font-size:8px!important}}
