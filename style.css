@@ -464,3 +464,35 @@ body{background:#29252B!important;color:#F5F0EA!important;font-family:'DM Sans',
 .service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:900px){.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.tool-grid,.service-grid{grid-template-columns:1fr}}
+
+
+/* 2026 portfolio refinement — Aqsa's own visual identity */
+:root{--bg:#101712;--panel:#17231d;--panel2:#1e3026;--ink:#f3f4ed;--muted:#aebbb0;--lime:#b9f27c;--line:#35483a;--mono:'DM Mono',monospace;--display:'DM Sans',sans-serif}
+html{scroll-padding-top:100px}
+body{background:#101712!important;color:#f3f4ed!important}
+.site-header{background:rgba(16,23,18,.94)!important;border-color:#35483a!important}
+.brand span,.hero-art .core b,.section-title em,.contact h2 em{color:#b9f27c!important}
+.header-note,.nav-links a,.hero-topline,.section-meta,.project-no,.tags,.footer{color:#b6c5b8}
+.nav-links a:hover,.text-link:hover,.project-links a:hover{color:#b9f27c!important}
+.button-lime{background:#b9f27c!important;color:#101712!important}
+.hero-grid-bg{opacity:.28}
+.hero-art{background:radial-gradient(circle at 50% 48%,#294535 0,#17271e 48%,#101712 76%)!important;border-color:#405b47!important}
+.orbit{border-color:rgba(185,242,124,.28)!important}
+.core{background:#1d3325!important;border-color:#b9f27c!important}
+.ticker{background:#b9f27c!important;color:#101712!important}
+.ticker i{color:#31553a!important}
+.section-pad{border-color:#35483a!important}
+.project-visual,.tool-card,.service-card,.journey-card{background:#17231d!important;border-color:#35483a!important}
+.retail-visual{background:radial-gradient(circle at 70% 35%,#294535,#17231d 68%)!important}
+.banking-visual{background:radial-gradient(circle at 70% 38%,#304b3a,#17231d 70%)!important}
+.tool-icon,.tool-number,.tool-level,.service-card>span,.service-card>small,.journey-caption{color:#b9f27c!important}
+.honesty-note,.breakdown-footnote,.level-disclaimer{color:#aebbb0!important}
+.contact-side a{border-color:#35483a!important}
+.focus{padding:100px 6vw;border-bottom:1px solid #35483a;background:linear-gradient(135deg,#142219 0%,#101712 68%)}
+.focus-layout{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center;padding:55px 0 35px}
+.focus-copy h3{font-size:clamp(23px,3vw,35px);line-height:1.2;letter-spacing:-1.2px;margin:0 0 18px}
+.focus-copy p{font-size:14px;line-height:1.9;color:#b6c4b8}
+.focus-status{font:10px var(--mono)!important;letter-spacing:1px;color:#b9f27c!important}
+.focus-method{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #35483a;border-bottom:1px solid #35483a;padding:18px 0;gap:12px}
+.focus-method span{font:9px var(--mono);letter-spacing:.8px;color:#b9f27c}
+@media(max-width:700px){.focus{padding:70px 23px}.focus-layout{grid-template-columns:1fr;gap:25px;padding:38px 0 25px}.focus-method{grid-template-columns:1fr 1fr;row-gap:14px}.header-note{display:none}}
