@@ -542,3 +542,74 @@ body{background:#f6f8fb!important;color:#17243a!important;font-family:'Inter',sa
 .focus-method span{font:10px 'Inter',sans-serif;letter-spacing:.5px;color:#315efb}
 .footer{background:#fff!important;border-top:1px solid #dce3ed!important}
 @media(max-width:700px){.focus{padding:70px 23px}.focus-layout{grid-template-columns:1fr;gap:25px;padding:38px 0 25px}.focus-method{grid-template-columns:1fr 1fr;row-gap:14px}.header-note{display:none}}
+
+
+/* Final visual direction — confident midnight / electric blue */
+:root{
+  --bg:#0b1220;--panel:#111d30;--panel2:#172944;--ink:#f4f7ff;
+  --muted:#b1bfd3;--lime:#62a5ff;--line:#2a3b55;
+  --display:'Manrope',sans-serif;--mono:'Inter',sans-serif
+}
+body{background:#0b1220!important;color:#f4f7ff!important}
+.site-header{background:rgba(11,18,32,.96)!important;border-color:#2a3b55!important;box-shadow:0 8px 30px rgba(0,0,0,.22)!important}
+.brand{color:#f4f7ff!important}
+.header-note,.nav-links a,.hero-topline,.section-meta,.project-no,.tags,.footer{color:#b1bfd3!important}
+.nav-links a:hover,.text-link:hover,.project-links a:hover{color:#62a5ff!important}
+.nav-links .nav-cta{border-color:#62a5ff!important;color:#8bbcff!important}
+.hero,.about,.toolkit,.services,.contact{background:#0b1220!important;color:#f4f7ff!important}
+.hero-grid-bg{opacity:.3!important}
+.hero h1{color:#f4f7ff!important;font-family:'Manrope',sans-serif!important;font-size:clamp(48px,6.2vw,88px)!important;line-height:1.02!important;letter-spacing:-.065em!important;font-weight:800!important;max-width:850px!important;margin:34px 0 30px!important}
+.hero h1 em{color:#62a5ff!important;font-style:normal!important;font-weight:800!important}
+.hero-intro{color:#d4deed!important;font-size:clamp(16px,1.45vw,19px)!important;line-height:1.65!important;max-width:440px!important;font-weight:500!important}
+.button-lime{background:#62a5ff!important;color:#07111f!important;border-color:#62a5ff!important;font-weight:800!important}
+.button-lime:hover{background:#83b8ff!important;box-shadow:0 12px 35px rgba(98,165,255,.25)!important}
+.text-link{color:#f4f7ff!important;border-color:#60718a!important}
+.hero-art{background:radial-gradient(circle at 50% 45%,#1b3b66 0,#122744 48%,#0b1220 78%)!important;border:1px solid #345783!important}
+.orbit{border-color:rgba(98,165,255,.42)!important}
+.orbit-b{border-color:rgba(53,214,194,.35)!important}
+.orbit-c{border-color:rgba(98,165,255,.25)!important}
+.core{background:radial-gradient(circle at 40% 35%,#1d4775,#10243e 75%)!important;border:1px solid #62a5ff!important;color:#f4f7ff!important;box-shadow:0 0 70px rgba(98,165,255,.2),inset 0 0 32px rgba(53,214,194,.08)!important}
+.core b,.section-title em,.contact h2 em{color:#62a5ff!important}
+.core span,.orbit-word,.art-label,.art-coordinates{color:#d3e3f8!important}
+.ticker{background:#62a5ff!important;color:#07111f!important}
+.ticker i{color:#0d526f!important}
+.section-pad{border-color:#2a3b55!important}
+.work,.journey{background:#101b2d!important;color:#f4f7ff!important}
+.work .section-meta,.journey .section-meta{color:#9eb0c8!important;border-color:#2a3b55!important}
+.work-heading .section-title em,.journey .section-title em{color:#62a5ff!important}
+.work-heading>p{color:#b1bfd3!important}
+.project{border-color:#2a3b55!important}
+.project-visual,.tool-card,.service-card,.journey-card{background:#14233a!important;border-color:#2a3b55!important;color:#f4f7ff!important}
+.retail-visual{background:radial-gradient(circle at 70% 35%,#1b3b66,#14233a 70%)!important;color:#f4f7ff!important}
+.banking-visual{background:radial-gradient(circle at 70% 38%,#17444c,#14233a 70%)!important;color:#f4f7ff!important}
+.visual-top,.visual-bottom,.chart-sub,.chart-y,.chart-x{color:#b1bfd3!important}
+.chart-title,.bank-title,.project-info h3,.third-copy h3,.tool-card h3,.service-card h3,.journey-card h3{color:#f4f7ff!important}
+.chart-title span,.bank-title em,.bank-orbit span,.bank-stats strong{color:#62a5ff!important}
+.chart-area svg path{stroke:#62a5ff!important}
+.chart-area svg path[fill]{fill:#62a5ff!important;opacity:.13!important}
+.chart-area svg circle{fill:#35d6c2!important}
+.project-info>p:not(.honesty-note),.third-copy p,.tool-card p,.service-card p,.journey-card p,.principles p{color:#b1bfd3!important}
+.tags span{background:#1b3556!important;color:#a9ceff!important;border-color:#345783!important}
+.project-breakdown{background:#101d31!important;border-color:#2a3b55!important}
+.breakdown-heading{color:#75b5ff!important;border-color:#2a3b55!important}
+.breakdown-steps>div{border-color:#2a3b55!important}
+.breakdown-steps b,.tool-icon,.tool-number,.tool-level,.service-card>span,.service-card>small,.journey-caption{color:#62a5ff!important}
+.breakdown-steps strong{color:#f4f7ff!important}
+.breakdown-steps small,.breakdown-footnote,.honesty-note,.level-disclaimer{color:#aebed2!important}
+.focus{background:linear-gradient(135deg,#142b49 0%,#0b1220 78%)!important;border-color:#2a3b55!important}
+.focus-copy p{color:#b1bfd3!important}
+.focus-status,.focus-method span{color:#75b5ff!important}
+.focus-method{border-color:#2a3b55!important}
+.principles article{background:#111d30!important;border-color:#2a3b55!important}
+.principles b{color:#62a5ff!important}
+.principles h3{color:#f4f7ff!important}
+.toolkit-intro,.about-text p,.contact-grid>div:first-child>p{color:#b1bfd3!important}
+.tool-card:hover,.service-card:hover{border-color:#62a5ff!important;box-shadow:0 16px 36px rgba(0,0,0,.2)!important}
+.contact-side a{border-color:#2a3b55!important;color:#f4f7ff!important}
+.contact-side a:hover,.footer a:last-child{color:#62a5ff!important}
+.contact-big{color:#263a57!important}
+.footer{background:#080e19!important;border-color:#2a3b55!important}
+@media(max-width:700px){
+ .hero h1{font-size:clamp(43px,11.5vw,66px)!important;line-height:1.05!important}
+ .nav-links{background:#111d30!important;border-color:#2a3b55!important}
+}
