@@ -372,3 +372,25 @@ body{background:#08090d!important;color:#f7f7fb!important;font-family:'Inter',sa
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+
+/* Five-step problem-solving workflow — shared visual language */
+.workflow-heading,.delivery-heading{margin:54px 0 22px;max-width:760px}
+.workflow-heading h3,.delivery-heading h3{font:800 clamp(27px,3.5vw,42px)/1.1 'Manrope',sans-serif;letter-spacing:-1.8px;color:#fff;margin:12px 0}
+.workflow-heading h3 em,.delivery-heading h3 em{font-style:normal;color:#35d9ff}
+.workflow-heading>p:last-child{color:#b7b7c7;font-size:14px;line-height:1.8}
+.workflow-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:26px 0 28px}
+.workflow-card{min-height:220px;padding:20px 17px;background:linear-gradient(145deg,#171923,#11121a);border:1px solid #353548;border-radius:12px;position:relative;overflow:hidden}
+.workflow-card:before{content:"";position:absolute;left:0;top:0;width:42px;height:3px;background:#35d9ff}
+.workflow-card>span{font:800 9px 'Inter',sans-serif;letter-spacing:1px;color:#35d9ff}
+.workflow-card h3{font:800 17px/1.2 'Manrope',sans-serif;color:#fff;margin:22px 0 10px}
+.workflow-card p{font:13px/1.75 'Inter',sans-serif;color:#b7b7c7;margin:0}
+.delivery-heading{margin-top:58px}
+.delivery-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:24px 0 26px}
+.delivery-step{display:flex;gap:12px;align-items:flex-start;padding:18px 14px;background:#151620;border:1px solid #343448;border-radius:10px;min-height:150px}
+.delivery-step>b{font:800 20px 'Manrope',sans-serif;color:#35d9ff}
+.delivery-step h4{font:800 14px 'Manrope',sans-serif;color:#fff;margin:2px 0 8px}
+.delivery-step p{font:12px/1.7 'Inter',sans-serif;color:#b7b7c7;margin:0}
+@media(max-width:1000px){.workflow-grid,.delivery-flow{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.workflow-grid,.delivery-flow{grid-template-columns:1fr 1fr}.workflow-card{min-height:190px}.delivery-step{min-height:135px}}
+@media(max-width:430px){.workflow-grid,.delivery-flow{grid-template-columns:1fr}.workflow-card{min-height:0}.delivery-step{min-height:0}}
