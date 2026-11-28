@@ -1,173 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Interactive business decision tools by Aqsa Shaheen: inventory reorder planning and product profitability analysis.">
-<meta name="theme-color" content="#101712">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Interactive demand forecasting and supplier decision tools by Aqsa Shaheen.">
+<meta name="theme-color" content="#f6f8fb">
 <title>Decision Tools Lab | Aqsa Shaheen</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#101712;--panel:#17231d;--panel2:#1e3026;--ink:#f3f4ed;--muted:#aebbb0;--lime:#b9f27c;--line:#35483a;--mono:'Inter',monospace;--display:'Inter',sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display)}a{color:inherit;text-decoration:none}.top{height:auto;min-height:76px;padding:18px 5.5vw;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--line);position:sticky;top:0;background:#101712ee;backdrop-filter:blur(16px);z-index:5}.brand{font-size:24px;font-weight:700;letter-spacing:-2px}.brand span{color:var(--lime)}nav{display:flex;gap:24px;flex-wrap:wrap}nav a,.mono,.eyebrow,.tag,footer{font:10px var(--mono);letter-spacing:1px}nav a{color:#c3c5b9}nav a:hover,.back{color:var(--lime)}main{max-width:1200px;margin:auto;padding:48px 6vw 100px}.back{font:10px var(--mono);letter-spacing:1px}.hero{padding:55px 0 65px;display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center;border-bottom:1px solid var(--line)}.eyebrow{color:var(--lime);text-transform:uppercase}.hero h1{font-size:clamp(52px,8vw,100px);line-height:.92;letter-spacing:-.08em;margin:20px 0}.hero h1 em{font-style:normal;color:var(--lime)}.lead{max-width:680px;color:#b8bcae;font-size:16px;line-height:1.85}.hero-visual{min-height:260px;border:1px solid #59614a;background:radial-gradient(circle at 50% 50%,#303b25,#17231d 68%);display:flex;flex-direction:column;justify-content:space-between;padding:24px}.hero-visual strong{font-size:clamp(26px,4vw,43px);line-height:1.1;letter-spacing:-2px}.hero-visual small{font:9px var(--mono);color:var(--lime);letter-spacing:1px}.intro{padding:35px 0 20px;color:var(--muted);line-height:1.8;max-width:850px}.tools{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}.tool{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,3vw,32px);position:relative}.tool:before{content:"";position:absolute;left:0;top:0;width:55px;height:2px;background:var(--lime)}.tool-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.tag{color:var(--lime);font-size:9px}.tool h2{font-size:clamp(25px,3vw,36px);letter-spacing:-1.5px;margin:17px 0 8px}.tool>p{font-size:13px;line-height:1.75;color:var(--muted);min-height:48px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:25px 0}.field label{display:block;font:9px var(--mono);letter-spacing:.5px;color:#aeb4a1;margin-bottom:8px;text-transform:uppercase}.field input{width:100%;background:#0e100d;color:var(--ink);border:1px solid #41483a;padding:13px 12px;font:14px var(--mono);outline:none;border-radius:0}.field input:focus{border-color:var(--lime);box-shadow:0 0 0 2px #b9f27c20}.results{border:1px solid #47513a;background:#20271a;padding:18px;margin-top:12px}.result-label{font:9px var(--mono);color:var(--lime);letter-spacing:1px}.result-main{font-size:clamp(27px,4vw,42px);font-weight:600;letter-spacing:-2px;margin:7px 0}.result-sub{font-size:12px;color:#b7c0a7;line-height:1.7}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}.metric{background:#11140f;padding:13px}.metric small{display:block;color:#8f9982;font:8px var(--mono);letter-spacing:.7px}.metric strong{display:block;margin-top:7px;font:17px var(--mono);color:#f2f4e9}.status{display:inline-block;border:1px solid #849b45;color:var(--lime);padding:6px 8px;font:9px var(--mono);letter-spacing:.7px;margin-top:10px}.explain{border-top:1px solid var(--line);margin-top:22px;padding-top:16px;font-size:11px;line-height:1.8;color:#929a88}.method{margin-top:55px;border-top:1px solid var(--line);padding-top:30px}.method h2{font-size:30px;letter-spacing:-1px}.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.method-card{padding:20px;border:1px solid var(--line);background:#151713}.method-card b{font:10px var(--mono);color:var(--lime)}.method-card h3{font-size:16px;margin:15px 0 8px}.method-card p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}.disclaimer{border-left:2px solid var(--lime);padding:15px 18px;background:#191d16;color:#b5bba9;font-size:11px;line-height:1.8;margin-top:24px}footer{border-top:1px solid var(--line);padding:25px 6vw;color:#92998a;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}footer a{color:var(--lime)}
-@media(max-width:800px){.hero{grid-template-columns:1fr}.tools{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr 1fr}.hero-visual{min-height:190px}}@media(max-width:480px){main{padding-top:30px}.fields{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}nav{gap:12px}nav a{font-size:8px}}
-
-/* Shared Aqsa portfolio identity — aligned with the main portfolio */
-:root{--bg:#29252B;--panel:#353039;--panel2:#403944;--ink:#F5F0EA;--muted:#B9ADB4;--lime:#C99BA6;--line:#514750;--mono:'Inter',monospace;--display:'DM Sans',sans-serif}
-*{box-sizing:border-box}
-body{background:#29252B!important;color:#F5F0EA!important;font-family:'DM Sans',sans-serif!important}
-.top{background:rgba(41,37,43,.96)!important;border-color:#514750!important}
-.brand,.brand span{color:#C99BA6!important}
-.nav a,.back,.link{color:#DED5CE!important}
-.nav a:hover,.back:hover,.link:hover{color:#C99BA6!important}
-.eyebrow,.label,.visual small,.step b,.step:before,th{color:#C99BA6!important}
-.hero{border-color:#514750!important}
-.hero h1{font-family:'DM Sans',sans-serif!important;font-weight:700!important;letter-spacing:-.075em!important}
-.hero h1 em,h2 em{color:#C99BA6!important;font-family:'Manrope',serif!important;font-style:italic!important}
-.lead{color:#D4C9D0!important}
-.visual,.hero-visual{background:radial-gradient(circle at 50% 45%,#715765,#353039 72%)!important;border-color:#766475!important}
-.section{border-color:#514750!important}
-.section>p,.card p,.card li,td{color:#C9BDC5!important}
-.card,.step,.note,.tool,.method-card{background:#403944!important;border-color:#5A4D5A!important}
-.card h3,.step strong,.tool h2,.method h2,.method-card h3{color:#F5F0EA!important}
-.step{border-top-color:#C99BA6!important}
-.note{border-left-color:#C99BA6!important;color:#E4D9DF!important}
-.note strong{color:#C99BA6!important}
-th{border-color:#514750!important}
-td{border-color:#514750!important}
-footer{background:#29252B!important;border-color:#514750!important;color:#B9ADB4!important}
-footer a{color:#C99BA6!important}
-@media(max-width:760px){.top{padding:18px 22px!important}.nav{gap:14px!important}.nav a{font-size:9px!important}}
-
-
-/* Shared portfolio system: same palette, typography, navigation and spacing as the home page */
-:root{--bg:#29252B;--panel:#353039;--panel2:#403944;--ink:#F5F0EA;--muted:#B9ADB4;--lime:#C99BA6;--line:#514750;--mono:'Inter',monospace;--display:'DM Sans',sans-serif}
-body{background:#29252B!important;color:#F5F0EA!important;font-family:'DM Sans',sans-serif!important}
-.top{background:rgba(41,37,43,.97)!important;border-color:#514750!important;min-height:78px;padding:18px 5.5vw!important;backdrop-filter:blur(18px);z-index:100}
-.brand,.brand span{color:#F5F0EA!important}.brand span{color:#C99BA6!important}
-nav,.nav{align-items:center;gap:clamp(12px,2vw,28px)!important}
-nav a,.nav a,.back,.link{font:10px 'Inter',monospace!important;letter-spacing:1px;color:#DED5CE!important;text-decoration:none}
-nav a:hover,.nav a:hover,.back:hover,.link:hover{color:#C99BA6!important}
-main{max-width:1200px!important;padding:55px 5.5vw 100px!important}
-.hero{border-color:#514750!important}.hero h1{font-family:'DM Sans',sans-serif!important;font-weight:700!important;letter-spacing:-.075em!important}
-.hero h1 em,h2 em{color:#C99BA6!important;font-family:'Manrope',serif!important;font-style:italic!important}
-.eyebrow,.label,.visual small,.step b,th{color:#C99BA6!important}
-.lead{color:#D4C9D0!important}.visual,.hero-visual{background:radial-gradient(circle at 50% 45%,#715765,#353039 72%)!important;border-color:#766475!important}
-.section{border-color:#514750!important}.section>p,.card p,.card li,td{color:#C9BDC5!important}
-.card,.step,.note,.tool,.method-card{background:#403944!important;border-color:#5A4D5A!important}
-.note{border-left-color:#C99BA6!important;color:#E4D9DF!important}.note strong{color:#C99BA6!important}
-th,td{border-color:#514750!important}footer{background:#29252B!important;border-color:#514750!important;color:#B9ADB4!important}footer a{color:#C99BA6!important}
-@media(max-width:760px){.top{padding:16px 22px!important}.nav,nav{gap:12px!important}.nav a,nav a{font-size:8px!important}main{padding:35px 22px 75px!important}.hero{grid-template-columns:1fr!important}.hero h1{font-size:clamp(52px,13vw,82px)!important}}
-
-/* Shared light theme and full-name identity */
-:root{--bg:#f6f8fb;--panel:#fff;--panel2:#edf2f8;--ink:#17243a;--muted:#637188;--lime:#315efb;--line:#dce3ed}
-body{background:#f6f8fb!important;color:#17243a!important;font-family:'Inter',sans-serif!important}
-.top,.site-header{background:rgba(255,255,255,.96)!important;border-color:#dce3ed!important}
-.brand{color:#17243a!important;font-family:'Manrope',sans-serif!important;font-weight:800!important;letter-spacing:-.5px!important}
-.brand span{color:#315efb!important}
-nav a,.nav a,.back,footer{color:#637188!important}
-nav a:hover,.nav a:hover,.back:hover{color:#315efb!important}
-.hero h1,.section h2,.tool h2,.method h2{color:#17243a!important;font-family:'Manrope',sans-serif!important}
-.hero h1 em,h2 em,.eyebrow,.label,.tag,.tool-head .tag,.hero-visual small,.visual small{color:#315efb!important}
-.lead,.intro,.section>p,.card p,.card li{color:#637188!important}
-.hero-visual,.visual,.project-visual{background:linear-gradient(145deg,#eaf0ff,#f8faff)!important;border-color:#dce3ed!important;color:#17243a!important}
-.card,.tool,.tool-card,.method-card,.step{background:#fff!important;border-color:#dce3ed!important;color:#17243a!important}
-.step{border-top-color:#315efb!important}
-.note,.disclaimer,.results{background:#edf2ff!important;border-color:#d9e3ff!important;color:#42516b!important}
-.result-label,.result-sub,.metric small,.status{color:#315efb!important}
-.field input{background:#fff!important;color:#17243a!important;border-color:#dce3ed!important}
-.field input:focus{border-color:#315efb!important;box-shadow:0 0 0 2px #315efb20!important}
-.metric{background:#f6f8fb!important}
-.metric strong{color:#17243a!important}
-.status{border-color:#315efb!important}
-footer{border-color:#dce3ed!important}
-
-/* Page-specific section tabs — high-contrast dark navigation */
-html{scroll-behavior:smooth}.section-tabs{position:sticky;top:0;z-index:90;display:flex;gap:9px;align-items:center;overflow-x:auto;white-space:nowrap;padding:13px max(5.5vw,20px);background:rgba(10,17,31,.97);border-bottom:1px solid #29415e;backdrop-filter:blur(16px);scrollbar-width:thin;scrollbar-color:#35d9ff #101b2e}.section-tabs a{display:inline-flex;align-items:center;padding:10px 15px;border:1px solid #3c5878;border-radius:9px;color:#f1f7ff;background:#182840;text-decoration:none;font:800 10px 'Inter',sans-serif;letter-spacing:.075em;transition:background .2s,border-color .2s,color .2s,transform .2s;box-shadow:inset 0 1px 0 #ffffff0b}.section-tabs a:hover,.section-tabs a:focus{background:#087e9c;color:#fff;border-color:#35d9ff;transform:translateY(-1px);box-shadow:0 5px 18px #00c8ff24}.section-tabs a:focus-visible{outline:2px solid #35d9ff;outline-offset:3px}section[id]{scroll-margin-top:88px}@media(max-width:760px){.section-tabs{padding:11px 18px;gap:7px}.section-tabs a{font-size:9px;padding:9px 12px}}
-</style><link rel="stylesheet" href="subpage-theme.css">
+:root{--bg:#f6f8fb;--panel:#fff;--soft:#edf2ff;--ink:#17243a;--muted:#637188;--accent:#315efb;--line:#dce3ed;--green:#147d59;--red:#b54747}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif}a{color:inherit;text-decoration:none}
+.site-header{position:sticky;top:0;z-index:20;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:18px 5.5vw;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.brand{font:800 18px Manrope,sans-serif}.header-note{font-size:10px;letter-spacing:1.5px;color:var(--muted)}.nav-links{display:flex;gap:18px;flex-wrap:wrap}.nav-links a{font-size:10px;letter-spacing:1px;color:var(--muted)}.nav-links a:hover{color:var(--accent)}
+main{max-width:1200px;margin:auto;padding:54px 5.5vw 90px}.back{font-size:11px;color:var(--muted)}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center;padding:38px 0 30px;border-bottom:1px solid var(--line)}.eyebrow,.meta,.tag{font-size:10px;letter-spacing:1.4px;color:var(--accent);font-weight:700}.hero h1{font:800 clamp(48px,7vw,82px)/.98 Manrope,sans-serif;letter-spacing:-4px;margin:18px 0}.hero h1 em{color:var(--accent);font-style:normal}.lead{font-size:17px;line-height:1.8;color:var(--muted);max-width:680px}.hero-panel{background:linear-gradient(145deg,#eaf0ff,#fff);border:1px solid var(--line);border-radius:18px;padding:28px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}.hero-panel strong{font:800 clamp(24px,3vw,36px)/1.2 Manrope}.hero-panel small{font-size:10px;letter-spacing:1.2px;color:var(--accent)}.intro{color:var(--muted);line-height:1.8;margin:24px 0 38px}.tool{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,34px);margin:28px 0;box-shadow:0 10px 35px #1c31500a}.tool-head{display:flex;justify-content:space-between;gap:15px;align-items:center}.tool h2{font:800 clamp(27px,4vw,40px) Manrope;margin:12px 0}.tool>p{color:var(--muted);line-height:1.75;max-width:850px}.field-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:22px 0}.field label{display:block;font-size:10px;letter-spacing:.6px;color:var(--muted);font-weight:700;margin-bottom:8px}.field input,.field textarea{width:100%;padding:13px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);font:14px Inter;outline:none}.field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px #315efb18}.field textarea{min-height:100px;resize:vertical;line-height:1.6}.hint{font-size:11px;color:var(--muted);line-height:1.6;margin-top:7px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.btn{border:0;border-radius:9px;padding:13px 18px;background:var(--accent);color:white;font-weight:700;cursor:pointer}.btn.secondary{background:var(--soft);color:var(--accent)}.results{background:#f8faff;border:1px solid var(--line);border-radius:12px;padding:20px;margin-top:20px}.result-title{font-size:10px;letter-spacing:1.2px;color:var(--accent);font-weight:800}.big{font:800 clamp(28px,4vw,42px) Manrope;margin:8px 0}.muted{color:var(--muted);font-size:12px;line-height:1.7}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}.metric{padding:14px;background:white;border:1px solid var(--line);border-radius:9px}.metric small{display:block;font-size:9px;letter-spacing:.8px;color:var(--muted)}.metric strong{display:block;font:700 20px Manrope;margin-top:7px}.table-wrap{overflow-x:auto;margin-top:16px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-size:9px;letter-spacing:.8px}.rank{color:var(--accent);font-weight:800}.supplier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}.supplier{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fbfcff}.supplier h3{font:700 16px Manrope;margin:0 0 13px}.supplier .field{margin:10px 0}.weights{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:20px 0;padding:18px;background:#f8faff;border-radius:12px}.weights .field input{padding:10px}.note{border-left:3px solid var(--accent);padding:15px 18px;background:var(--soft);color:#42516b;font-size:12px;line-height:1.8;margin-top:20px}.method{margin-top:45px}.method h2{font:800 30px Manrope}.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.method-card{background:white;border:1px solid var(--line);border-radius:12px;padding:19px}.method-card b{color:var(--accent);font-size:10px}.method-card h3{font:700 17px Manrope}.method-card p{font-size:12px;line-height:1.7;color:var(--muted)}footer{border-top:1px solid var(--line);padding:24px 5.5vw;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:10px;letter-spacing:.7px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.field-grid,.supplier-grid{grid-template-columns:1fr 1fr}.weights{grid-template-columns:repeat(2,1fr)}.method-grid{grid-template-columns:1fr}.header-note{display:none}}@media(max-width:480px){main{padding:32px 20px 65px}.field-grid,.supplier-grid,.metrics{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}.nav-links{gap:10px}.nav-links a{font-size:9px}}
+</style>
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="index.html#top" aria-label="Aqsa Shaheen home">Aqsa Shaheen</a>
-  <span class="header-note">AI · DATA · MATHEMATICS</span>
-  <nav class="nav-links" aria-label="Main navigation">
-    <a href="index.html#top">HOME</a>
-    <a href="index.html#about">ABOUT</a>
-    <a href="index.html#work">PROJECTS</a>
-    <a href="index.html#toolkit">SKILLS</a>
-    <a href="index.html#services">DELIVER</a>
-    <a href="index.html#experience">EXPERIENCE</a>
-    <a href="machine-learning.html">ML</a>
-    <a href="optimization.html">OPTIMIZATION</a>
-    <a href="artifact-lab.html">ARTIFACT</a>
-    <a href="ml-landscape.html">ML LANDSCAPE</a>
-    <a href="index.html#contact">CONTACT</a>
-  </nav>
-</header><nav class="section-tabs" aria-label="Page sections"><a href="#artifact-inventory-planner">INVENTORY PLANNER</a><a href="#artifact-method">HOW IT WORKS</a></nav>
+<a class="brand" href="index.html">Aqsa Shaheen</a><span class="header-note">MATHEMATICS · DATA · DECISION SCIENCE</span>
+<nav class="nav-links" aria-label="Main navigation"><a href="index.html#top">HOME</a><a href="index.html#about">ABOUT</a><a href="index.html#work">PROJECTS</a><a href="index.html#toolkit">SKILLS</a><a href="machine-learning.html">ML</a><a href="optimization.html">OPTIMIZATION</a><a href="artifact-lab.html">ARTIFACTS</a><a href="index.html#contact">CONTACT</a></nav>
+</header>
 <main>
 <a class="back" href="index.html">← BACK TO PORTFOLIO</a>
-<section class="hero"><div><p class="eyebrow">01 / INTERACTIVE BUSINESS TOOLS</p><h1>From data<br>to <em>decisions.</em></h1><p class="lead">A collection of original, browser-based decision tools. Change the inputs, explore the calculations and see how mathematical thinking can support everyday business questions.</p></div><div class="hero-visual"><small>IJ DECISION TOOLS LAB INSPIRATION · ORIGINAL DEMONSTRATIONS</small><strong>Question the inputs.<br>Model the trade-offs.<br><em style="color:var(--lime)">Explain the decision.</em></strong><small>MATHEMATICS × DATA × BUSINESS</small></div></section>
-<p class="intro">These are interactive educational prototypes built for demonstration. They use the values you enter in your browser; no information is uploaded or saved.</p>
-<section class="tools" aria-label="Interactive business calculators" id="artifact-inventory-planner">
-<article class="tool">
-<div class="tool-head"><span class="tag">ARTIFACT 01 / RETAIL & INVENTORY</span><span class="mono">01</span></div>
-<h2>Inventory Reorder Planner</h2>
-<p>Estimate when stock may need replenishment and how much to order using average demand, supplier lead time and a safety buffer.</p>
-<div class="fields">
-<div class="field"><label for="dailyDemand">Average daily demand (units)</label><input id="dailyDemand" type="number" min="0" step="0.1" value="18"></div>
-<div class="field"><label for="leadTime">Supplier lead time (days)</label><input id="leadTime" type="number" min="0" step="1" value="7"></div>
-<div class="field"><label for="safetyStock">Safety stock (units)</label><input id="safetyStock" type="number" min="0" step="1" value="30"></div>
-<div class="field"><label for="currentStock">Current available stock</label><input id="currentStock" type="number" min="0" step="1" value="145"></div>
-<div class="field"><label for="reviewPeriod">Review period (days)</label><input id="reviewPeriod" type="number" min="0" step="1" value="7"></div>
-<div class="field"><label for="packSize">Order pack size (units)</label><input id="packSize" type="number" min="1" step="1" value="1"></div>
+<section class="hero"><div><p class="eyebrow">INTERACTIVE DECISION TOOLS / 2026</p><h1>From evidence<br>to <em>decisions.</em></h1><p class="lead">Two browser-based business tools exploring demand forecasting and multi-criteria supplier selection. Adjust the assumptions, inspect the calculations and compare the outcomes.</p></div><div class="hero-panel"><small>MATHEMATICS × DATA × OPERATIONS</small><strong>Forecast demand.<br>Evaluate suppliers.<br><span style="color:var(--accent)">Make decisions clearer.</span></strong><small>INTERACTIVE EDUCATIONAL PROTOTYPES</small></div></section>
+<p class="intro">These tools are original educational implementations inspired by practical decision-support themes. Calculations run in your browser; values are not uploaded or saved. Use suitable real data and validate assumptions before making operational decisions.</p>
+
+<section class="tool" id="demand-forecast">
+<div class="tool-head"><span class="tag">ARTIFACT 01 / OPERATIONS ANALYTICS</span><span class="meta">FORECASTING</span></div>
+<h2>Demand Forecast Workbench</h2>
+<p>Enter historical demand in chronological order. The workbench compares a naïve forecast, a moving average and simple exponential smoothing using a rolling hold-out evaluation, then produces a next-period estimate from the method with the lowest mean absolute error (MAE).</p>
+<div class="field-grid">
+<div class="field" style="grid-column:1/-1"><label for="demandSeries">HISTORICAL DEMAND (comma-separated units)</label><textarea id="demandSeries">120, 128, 125, 140, 136, 150, 147, 158, 162, 155, 171, 178</textarea><div class="hint">Enter at least 6 non-negative numbers in time order, such as weekly or monthly sales. Use one consistent time interval.</div></div>
+<div class="field"><label for="forecastAlpha">SMOOTHING FACTOR (α)</label><input id="forecastAlpha" type="number" min="0.05" max="0.95" step="0.05" value="0.30"><div class="hint">A value between 0 and 1. Higher values react more to recent demand.</div></div>
+<div class="field"><label for="movingWindow">MOVING AVERAGE WINDOW</label><input id="movingWindow" type="number" min="2" max="8" step="1" value="3"><div class="hint">Number of recent observations used in the moving average.</div></div>
 </div>
-<div class="results" aria-live="polite"><div class="result-label">RECOMMENDED REPLENISHMENT</div><div class="result-main" id="reorderQty">0 units</div><div class="result-sub" id="reorderMessage">Enter values to calculate a replenishment estimate.</div><div class="metrics"><div class="metric"><small>REORDER POINT</small><strong id="reorderPoint">0</strong></div><div class="metric"><small>ESTIMATED DAYS OF COVER</small><strong id="daysCover">0</strong></div></div><span class="status" id="stockStatus">CHECKING STOCK</span></div>
-<div class="explain"><strong>Model:</strong> Reorder point = (average daily demand × lead time) + safety stock. Target stock also covers the review period. Suggested order is rounded up to the selected pack size.</div>
-</article>
-<article class="tool">
-<div class="tool-head"><span class="tag">ARTIFACT 02 / PRODUCT & FINANCE</span><span class="mono">02</span></div>
-<h2>Product Profitability Calculator</h2>
-<p>Estimate unit contribution, gross profit and margin from a product's selling price, direct unit cost and sales volume.</p>
-<div class="fields">
-<div class="field"><label for="sellingPrice">Selling price per unit (PKR)</label><input id="sellingPrice" type="number" min="0" step="0.01" value="1500"></div>
-<div class="field"><label for="unitCost">Direct cost per unit (PKR)</label><input id="unitCost" type="number" min="0" step="0.01" value="930"></div>
-<div class="field"><label for="unitsSold">Units sold in period</label><input id="unitsSold" type="number" min="0" step="1" value="240"></div>
-<div class="field"><label for="fixedCosts">Other fixed costs (PKR)</label><input id="fixedCosts" type="number" min="0" step="0.01" value="45000"></div>
-</div>
-<div class="results" aria-live="polite"><div class="result-label">ESTIMATED PERIOD RESULT</div><div class="result-main" id="netResult">PKR 0</div><div class="result-sub" id="profitMessage">Enter values to calculate product profitability.</div><div class="metrics"><div class="metric"><small>UNIT CONTRIBUTION</small><strong id="unitContribution">PKR 0</strong></div><div class="metric"><small>GROSS MARGIN</small><strong id="grossMargin">0%</strong></div><div class="metric"><small>BREAK-EVEN UNITS</small><strong id="breakEven">0</strong></div><div class="metric"><small>REVENUE</small><strong id="revenue">PKR 0</strong></div></div></div>
-<div class="explain"><strong>Model:</strong> Unit contribution = selling price − direct unit cost. Estimated result = (unit contribution × units sold) − fixed costs. This is a simplified contribution model, not a full accounting statement.</div>
-</article>
+<div class="actions"><button class="btn" id="runForecast">RUN FORECAST COMPARISON</button><button class="btn secondary" id="resetForecast">RESET EXAMPLE</button></div>
+<div class="results" aria-live="polite"><div class="result-title">BEST METHOD BY HOLD-OUT MAE</div><div class="big" id="bestMethod">Moving Average</div><div class="muted" id="forecastMessage">Run the comparison to evaluate the methods.</div><div class="metrics"><div class="metric"><small>NEXT-PERIOD FORECAST</small><strong id="nextForecast">—</strong></div><div class="metric"><small>BEST HOLD-OUT MAE</small><strong id="bestMae">—</strong></div><div class="metric"><small>OBSERVATIONS</small><strong id="observationCount">12</strong></div></div>
+<div class="table-wrap"><table><thead><tr><th>METHOD</th><th>HOLD-OUT MAE</th><th>NEXT-PERIOD FORECAST</th></tr></thead><tbody id="forecastRows"><tr><td colspan="3">Run the comparison to see results.</td></tr></tbody></table></div></div>
+<div class="note"><strong>Model notes:</strong> The naïve method uses the previous actual value. Moving average uses the selected recent window. Simple exponential smoothing updates a level using α. The last three observations are used as a rolling one-step hold-out where possible. MAE measures average absolute forecast error; lower is better on this hold-out, but it does not guarantee future accuracy.</div>
 </section>
-<section class="method" id="artifact-method"><p class="eyebrow">HOW TO READ THE OUTPUT</p><h2>Every number needs <em style="color:var(--lime)">context.</em></h2><div class="method-grid">
-<article class="method-card"><b>01 / INPUTS</b><h3>Check assumptions</h3><p>Use realistic units and a relevant time period. A daily demand estimate should be based on suitable historical data.</p></article>
-<article class="method-card"><b>02 / MODEL</b><h3>Understand the formula</h3><p>The calculator applies a transparent formula. It does not learn from data or guarantee a future outcome.</p></article>
-<article class="method-card"><b>03 / DECISION</b><h3>Review before acting</h3><p>Consider supplier delays, pending purchase orders, seasonal demand, taxes, discounts and other costs before making a business decision.</p></article>
-</div><div class="disclaimer"><strong>Limitations:</strong> These tools are learning prototypes, not production systems or professional financial advice. Inventory calculations assume steady average demand and do not account for existing purchase orders, variable lead times or seasonality. Profitability estimates exclude taxes, returns, overhead allocation and other costs unless entered as fixed costs.</div></section>
+
+<section class="tool" id="supplier-topsis">
+<div class="tool-head"><span class="tag">ARTIFACT 02 / SUPPLY-CHAIN DECISION SCIENCE</span><span class="meta">TOPSIS</span></div>
+<h2>Supplier Comparison &amp; Ranking</h2>
+<p>Compare three suppliers across price, quality, lead time, delivery reliability and risk. TOPSIS (Technique for Order Preference by Similarity to Ideal Solution) ranks alternatives by their relative closeness to an ideal supplier profile.</p>
+<div class="supplier-grid">
+<div class="supplier"><h3>Supplier A</h3><div class="field"><label for="aPrice">PRICE (PKR / UNIT)</label><input id="aPrice" type="number" min="0.01" value="520"></div><div class="field"><label for="aQuality">QUALITY SCORE (0–10)</label><input id="aQuality" type="number" min="0" max="10" step=".1" value="8.8"></div><div class="field"><label for="aLead">LEAD TIME (DAYS)</label><input id="aLead" type="number" min="0" value="6"></div><div class="field"><label for="aReliability">ON-TIME RELIABILITY (%)</label><input id="aReliability" type="number" min="0" max="100" value="94"></div><div class="field"><label for="aRisk">RISK SCORE (0–10, LOWER IS BETTER)</label><input id="aRisk" type="number" min="0" max="10" step=".1" value="3"></div></div>
+<div class="supplier"><h3>Supplier B</h3><div class="field"><label for="bPrice">PRICE (PKR / UNIT)</label><input id="bPrice" type="number" min="0.01" value="495"></div><div class="field"><label for="bQuality">QUALITY SCORE (0–10)</label><input id="bQuality" type="number" min="0" max="10" step=".1" value="8.1"></div><div class="field"><label for="bLead">LEAD TIME (DAYS)</label><input id="bLead" type="number" min="0" value="9"></div><div class="field"><label for="bReliability">ON-TIME RELIABILITY (%)</label><input id="bReliability" type="number" min="0" max="100" value="97"></div><div class="field"><label for="bRisk">RISK SCORE (0–10, LOWER IS BETTER)</label><input id="bRisk" type="number" min="0" max="10" step=".1" value="2"></div></div>
+<div class="supplier"><h3>Supplier C</h3><div class="field"><label for="cPrice">PRICE (PKR / UNIT)</label><input id="cPrice" type="number" min="0.01" value="550"></div><div class="field"><label for="cQuality">QUALITY SCORE (0–10)</label><input id="cQuality" type="number" min="0" max="10" step=".1" value="9.4"></div><div class="field"><label for="cLead">LEAD TIME (DAYS)</label><input id="cLead" type="number" min="0" value="4"></div><div class="field"><label for="cReliability">ON-TIME RELIABILITY (%)</label><input id="cReliability" type="number" min="0" max="100" value="91"></div><div class="field"><label for="cRisk">RISK SCORE (0–10, LOWER IS BETTER)</label><input id="cRisk" type="number" min="0" max="10" step=".1" value="4"></div></div>
+</div>
+<p class="meta">CRITERIA WEIGHTS · RELATIVE IMPORTANCE</p>
+<div class="weights">
+<div class="field"><label for="wPrice">PRICE</label><input id="wPrice" type="number" min="0" step=".05" value=".25"></div>
+<div class="field"><label for="wQuality">QUALITY</label><input id="wQuality" type="number" min="0" step=".05" value=".25"></div>
+<div class="field"><label for="wLead">LEAD TIME</label><input id="wLead" type="number" min="0" step=".05" value=".20"></div>
+<div class="field"><label for="wReliability">RELIABILITY</label><input id="wReliability" type="number" min="0" step=".05" value=".20"></div>
+<div class="field"><label for="wRisk">RISK</label><input id="wRisk" type="number" min="0" step=".05" value=".10"></div>
+</div>
+<div class="hint">Weights are normalized automatically. Their entered values must add up to more than zero. Price, lead time and risk are cost criteria; quality and reliability are benefit criteria.</div>
+<div class="actions"><button class="btn" id="rankSuppliers">RANK SUPPLIERS</button><button class="btn secondary" id="resetSuppliers">RESET EXAMPLE</button></div>
+<div class="results" aria-live="polite"><div class="result-title">TOP-RANKED SUPPLIER</div><div class="big" id="winner">Supplier A</div><div class="muted" id="winnerMessage">Run TOPSIS to calculate the ranking.</div><div class="table-wrap"><table><thead><tr><th>RANK</th><th>SUPPLIER</th><th>TOPSIS SCORE</th><th>INTERPRETATION</th></tr></thead><tbody id="supplierRows"><tr><td colspan="4">Run the ranking to see results.</td></tr></tbody></table></div></div>
+<div class="note"><strong>Method:</strong> TOPSIS normalizes each criterion column, multiplies it by its normalized weight, identifies the ideal best and worst values, calculates each supplier's Euclidean distance from both ideals, and computes a closeness score between 0 and 1. A higher score indicates a closer match to the weighted ideal among the suppliers entered. Rankings depend on the selected criteria, data quality and weights.</div>
+</section>
+
+<section class="method"><p class="eyebrow">HOW TO USE THESE TOOLS</p><h2>Good decisions start with good assumptions.</h2><div class="method-grid">
+<article class="method-card"><b>01 / INPUT</b><h3>Use relevant data</h3><p>Enter consistent historical demand or comparable supplier measurements. Check units, ranges and missing information.</p></article>
+<article class="method-card"><b>02 / MODEL</b><h3>Inspect the method</h3><p>Understand how forecast errors or TOPSIS scores are calculated. Change assumptions and observe how the outcome changes.</p></article>
+<article class="method-card"><b>03 / VALIDATE</b><h3>Review before acting</h3><p>Compare outputs with business context, additional evidence and expert judgement. A model ranking is decision support, not an automatic purchase instruction.</p></article>
+</div><div class="note"><strong>Limitations:</strong> These are educational prototypes, not production forecasting or procurement systems. Forecasting methods are deliberately introductory and do not model seasonality, promotions, stock-outs or external drivers. Supplier rankings depend on the entered criteria and weights and do not replace supplier due diligence.</div></section>
 </main>
-<footer><span>© 2026 AQSA SHAHEEN · BUSINESS DECISION TOOLS LAB</span><span>THINK CLEAR. BUILD USEFUL.</span><a href="index.html">BACK TO PORTFOLIO ↑</a></footer>
+<footer><span>© 2026 AQSA SHAHEEN · INTERACTIVE DECISION TOOLS</span><span>MATHEMATICS · DATA · PRACTICAL VALUE</span><a href="index.html">BACK TO PORTFOLIO ↑</a></footer>
 <script>
-const number=(id)=>Math.max(0,Number(document.getElementById(id).value)||0);
-const fmt=(n,d=0)=>new Intl.NumberFormat('en-PK',{maximumFractionDigits:d,minimumFractionDigits:d}).format(n);
-function updateInventory(){
- const demand=number('dailyDemand'),lead=number('leadTime'),safety=number('safetyStock'),stock=number('currentStock'),review=number('reviewPeriod'),pack=Math.max(1,number('packSize'));
- const point=demand*lead+safety,target=demand*(lead+review)+safety,raw=Math.max(0,target-stock),qty=Math.ceil(raw/pack)*pack,cover=demand>0?stock/demand:null;
- document.getElementById('reorderPoint').textContent=fmt(point);
- document.getElementById('daysCover').textContent=cover===null?'—':fmt(cover,1)+' days';
- document.getElementById('reorderQty').textContent=fmt(qty)+' units';
- const status=stock<=point?'REORDER REVIEW':'STOCK ABOVE REORDER POINT';
- document.getElementById('stockStatus').textContent=status;
- document.getElementById('reorderMessage').textContent=qty>0?'Suggested order to cover lead time plus the next review period. Check open purchase orders before placing an order.':'No replenishment is indicated by these assumptions at this time.';
+const $=id=>document.getElementById(id);
+const n=id=>Number($(id).value);
+const fmt=(v,d=2)=>Number(v).toLocaleString('en-PK',{maximumFractionDigits:d,minimumFractionDigits:d});
+function parseSeries(){const raw=$('demandSeries').value.trim();const values=raw.split(/[ ,;\n\t]+/).filter(Boolean).map(Number);if(values.length<6||values.some(v=>!Number.isFinite(v)||v<0))throw new Error('Please enter at least 6 valid non-negative numbers, separated by commas or spaces.');return values;}
+function forecastRun(){
+ try{
+  const y=parseSeries(),alpha=n('forecastAlpha'),windowSize=Math.floor(n('movingWindow'));
+  if(!(alpha>0&&alpha<1))throw new Error('Smoothing factor α must be between 0 and 1.');
+  if(!(windowSize>=2&&windowSize<y.length))throw new Error('Moving-average window must be at least 2 and smaller than the number of observations.');
+  const naive=[],moving=[],ses=[],actual=[];
+  for(let t=Math.max(windowSize, y.length-3);t<y.length;t++){
+   naive.push(y[t-1]);moving.push(y.slice(Math.max(0,t-windowSize),t).reduce((a,b)=>a+b,0)/Math.min(windowSize,t)); 
+   let level=y[0];for(let j=1;j<t;j++)level=alpha*y[j]+(1-alpha)*level;ses.push(level);actual.push(y[t]);
+  }
+  const methods=[
+   {name:'Naïve',errors:naive.map((v,i)=>Math.abs(actual[i]-v)),next:y[y.length-1]},
+   {name:'Moving Average',errors:moving.map((v,i)=>Math.abs(actual[i]-v)),next:y.slice(-windowSize).reduce((a,b)=>a+b,0)/windowSize},
+   {name:'Exponential Smoothing',errors:ses.map((v,i)=>Math.abs(actual[i]-v)),next:(()=>{let level=y[0];for(let j=1;j<y.length;j++)level=alpha*y[j]+(1-alpha)*level;return level;})()}
+  ];
+  methods.forEach(m=>m.mae=m.errors.reduce((a,b)=>a+b,0)/m.errors.length);
+  methods.sort((a,b)=>a.mae-b.mae);
+  $('bestMethod').textContent=methods[0].name;$('nextForecast').textContent=fmt(methods[0].next)+' units';$('bestMae').textContent=fmt(methods[0].mae);$('observationCount').textContent=y.length;
+  $('forecastMessage').textContent='Selected using '+actual.length+' rolling hold-out forecast(s). This is a model comparison, not a guarantee of future demand.';
+  $('forecastRows').innerHTML=methods.map((m,i)=>'<tr><td>'+(i+1===1?'★ ':'')+m.name+'</td><td>'+fmt(m.mae)+'</td><td>'+fmt(m.next)+' units</td></tr>').join('');
+ }catch(e){$('bestMethod').textContent='Check your inputs';$('forecastMessage').textContent=e.message;$('nextForecast').textContent='—';$('bestMae').textContent='—';}
 }
-function updateProfit(){
- const price=number('sellingPrice'),cost=number('unitCost'),units=number('unitsSold'),fixed=number('fixedCosts'),contribution=price-cost,revenue=price*units,gross=contribution*units,result=gross-fixed,margin=price>0?(contribution/price)*100:0,be=contribution>0?Math.ceil(fixed/contribution):null;
- document.getElementById('netResult').textContent='PKR '+fmt(result,2);
- document.getElementById('unitContribution').textContent='PKR '+fmt(contribution,2);
- document.getElementById('grossMargin').textContent=fmt(margin,1)+'%';
- document.getElementById('breakEven').textContent=be===null?'—':fmt(be);
- document.getElementById('revenue').textContent='PKR '+fmt(revenue,2);
- document.getElementById('profitMessage').textContent=result>=0?'Estimated contribution after entered fixed costs is positive.':'Estimated contribution after entered fixed costs is negative; review price, costs and volume.';
+function supplierRun(){
+ const names=['Supplier A','Supplier B','Supplier C'],prefix=['a','b','c'];
+ const data=prefix.map(p=>[n(p+'Price'),n(p+'Quality'),n(p+'Lead'),n(p+'Reliability'),n(p+'Risk')]);
+ const weights=[n('wPrice'),n('wQuality'),n('wLead'),n('wReliability'),n('wRisk')];
+ if(data.some(r=>r.some(v=>!Number.isFinite(v)||v<0))||data.some(r=>r[0]<=0||r[1]>10||r[3]>100||r[4]>10)){ $('winner').textContent='Check inputs';$('winnerMessage').textContent='Price must be above zero; quality and risk must be 0–10; reliability must be 0–100.';return;}
+ const sum=weights.reduce((a,b)=>a+b,0);if(weights.some(w=>w<0)||sum<=0){$('winner').textContent='Check weights';$('winnerMessage').textContent='Enter non-negative weights with a total greater than zero.';return;}
+ const w=weights.map(v=>v/sum),benefit=[false,true,false,true,false],norm=data[0].map((_,j)=>Math.sqrt(data.reduce((s,r)=>s+r[j]**2,0)));
+ if(norm.some(v=>v===0)){$('winner').textContent='Check data';$('winnerMessage').textContent='Each criterion needs at least one non-zero value.';return;}
+ const weighted=data.map(r=>r.map((v,j)=>v/norm[j]*w[j]));
+ const idealBest=[],idealWorst=[];
+ for(let j=0;j<5;j++){const vals=weighted.map(r=>r[j]);idealBest[j]=benefit[j]?Math.max(...vals):Math.min(...vals);idealWorst[j]=benefit[j]?Math.min(...vals):Math.max(...vals);}
+ const ranked=weighted.map((r,i)=>{const dBest=Math.sqrt(r.reduce((s,v,j)=>s+(v-idealBest[j])**2,0));const dWorst=Math.sqrt(r.reduce((s,v,j)=>s+(v-idealWorst[j])**2,0));return{name:names[i],score:dBest+dWorst===0?0:dWorst/(dBest+dWorst)};}).sort((a,b)=>b.score-a.score);
+ $('winner').textContent=ranked[0].name;$('winnerMessage').textContent='Highest relative closeness to the ideal supplier profile using the weights you selected.';
+ $('supplierRows').innerHTML=ranked.map((r,i)=>'<tr><td class="rank">'+(i+1)+'</td><td>'+r.name+'</td><td>'+fmt(r.score,4)+'</td><td>'+(i===0?'Closest to ideal':i===ranked.length-1?'Farthest from ideal':'Alternative')+'</td></tr>').join('');
 }
-document.querySelectorAll('.tool input').forEach(input=>input.addEventListener('input',()=>{updateInventory();updateProfit()}));
-updateInventory();updateProfit();
+$('runForecast').addEventListener('click',forecastRun);
+$('resetForecast').addEventListener('click',()=>{$('demandSeries').value='120, 128, 125, 140, 136, 150, 147, 158, 162, 155, 171, 178';$('forecastAlpha').value='.30';$('movingWindow').value='3';forecastRun();});
+$('rankSuppliers').addEventListener('click',supplierRun);
+$('resetSuppliers').addEventListener('click',()=>{const vals={aPrice:520,aQuality:8.8,aLead:6,aReliability:94,aRisk:3,bPrice:495,bQuality:8.1,bLead:9,bReliability:97,bRisk:2,cPrice:550,cQuality:9.4,cLead:4,cReliability:91,cRisk:4,wPrice:.25,wQuality:.25,wLead:.20,wReliability:.20,wRisk:.10};Object.entries(vals).forEach(([k,v])=>$(k).value=v);supplierRun();});
+forecastRun();supplierRun();
 </script>
-</body></html>
+</body>
+</html>
