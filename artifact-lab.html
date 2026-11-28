@@ -81,6 +81,9 @@ nav a:hover,.nav a:hover,.back:hover{color:#315efb!important}
 .metric strong{color:#17243a!important}
 .status{border-color:#315efb!important}
 footer{border-color:#dce3ed!important}
+
+/* Page-specific section tabs; main portfolio navigation remains unchanged */
+html{scroll-behavior:smooth}.section-tabs{position:sticky;top:0;z-index:90;display:flex;gap:8px;align-items:center;overflow-x:auto;white-space:nowrap;padding:12px max(5.5vw,20px);background:rgba(255,255,255,.94);border-bottom:1px solid #dce3ed;backdrop-filter:blur(14px);scrollbar-width:thin}.section-tabs a{display:inline-flex;align-items:center;padding:9px 13px;border:1px solid #dce3ed;border-radius:999px;color:#637188;text-decoration:none;font:700 10px 'Inter',sans-serif;letter-spacing:.07em;transition:.2s}.section-tabs a:hover,.section-tabs a:focus{background:#315efb;color:#fff;border-color:#315efb}.section-tabs a:focus-visible{outline:2px solid #315efb;outline-offset:3px}section[id]{scroll-margin-top:82px}@media(max-width:760px){.section-tabs{padding:10px 18px;gap:7px}.section-tabs a{font-size:9px;padding:8px 11px}}
 </style><link rel="stylesheet" href="subpage-theme.css">
 </head>
 <body>
@@ -100,12 +103,12 @@ footer{border-color:#dce3ed!important}
     <a href="ml-landscape.html">ML LANDSCAPE</a>
     <a href="index.html#contact">CONTACT</a>
   </nav>
-</header>
+</header><nav class="section-tabs" aria-label="Page sections"><a href="#artifact-inventory-planner">INVENTORY PLANNER</a><a href="#artifact-method">HOW IT WORKS</a></nav>
 <main>
 <a class="back" href="index.html">← BACK TO PORTFOLIO</a>
 <section class="hero"><div><p class="eyebrow">01 / INTERACTIVE BUSINESS TOOLS</p><h1>From data<br>to <em>decisions.</em></h1><p class="lead">A collection of original, browser-based decision tools. Change the inputs, explore the calculations and see how mathematical thinking can support everyday business questions.</p></div><div class="hero-visual"><small>IJ DECISION TOOLS LAB INSPIRATION · ORIGINAL DEMONSTRATIONS</small><strong>Question the inputs.<br>Model the trade-offs.<br><em style="color:var(--lime)">Explain the decision.</em></strong><small>MATHEMATICS × DATA × BUSINESS</small></div></section>
 <p class="intro">These are interactive educational prototypes built for demonstration. They use the values you enter in your browser; no information is uploaded or saved.</p>
-<section class="tools" aria-label="Interactive business calculators">
+<section class="tools" aria-label="Interactive business calculators" id="artifact-inventory-planner">
 <article class="tool">
 <div class="tool-head"><span class="tag">ARTIFACT 01 / RETAIL & INVENTORY</span><span class="mono">01</span></div>
 <h2>Inventory Reorder Planner</h2>
@@ -135,7 +138,7 @@ footer{border-color:#dce3ed!important}
 <div class="explain"><strong>Model:</strong> Unit contribution = selling price − direct unit cost. Estimated result = (unit contribution × units sold) − fixed costs. This is a simplified contribution model, not a full accounting statement.</div>
 </article>
 </section>
-<section class="method"><p class="eyebrow">HOW TO READ THE OUTPUT</p><h2>Every number needs <em style="color:var(--lime)">context.</em></h2><div class="method-grid">
+<section class="method" id="artifact-method"><p class="eyebrow">HOW TO READ THE OUTPUT</p><h2>Every number needs <em style="color:var(--lime)">context.</em></h2><div class="method-grid">
 <article class="method-card"><b>01 / INPUTS</b><h3>Check assumptions</h3><p>Use realistic units and a relevant time period. A daily demand estimate should be based on suitable historical data.</p></article>
 <article class="method-card"><b>02 / MODEL</b><h3>Understand the formula</h3><p>The calculator applies a transparent formula. It does not learn from data or guarantee a future outcome.</p></article>
 <article class="method-card"><b>03 / DECISION</b><h3>Review before acting</h3><p>Consider supplier delays, pending purchase orders, seasonal demand, taxes, discounts and other costs before making a business decision.</p></article>
