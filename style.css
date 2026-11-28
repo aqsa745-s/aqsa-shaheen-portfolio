@@ -394,3 +394,22 @@ body{background:#08090d!important;color:#f7f7fb!important;font-family:'Inter',sa
 @media(max-width:1000px){.workflow-grid,.delivery-flow{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:700px){.workflow-grid,.delivery-flow{grid-template-columns:1fr 1fr}.workflow-card{min-height:190px}.delivery-step{min-height:135px}}
 @media(max-width:430px){.workflow-grid,.delivery-flow{grid-template-columns:1fr}.workflow-card{min-height:0}.delivery-step{min-height:0}}
+
+
+/* PROJECT SECTION REFINEMENT — prevent sticky-nav overlap and improve card alignment */
+html{scroll-padding-top:112px!important}
+section[id]{scroll-margin-top:112px!important}
+.project{align-items:start!important}
+.project-info{min-width:0!important;padding-top:12px!important}
+.project-visual{align-self:start!important}
+.project-breakdown{margin-top:22px!important}
+.breakdown-heading{flex-wrap:wrap!important;line-height:1.5!important}
+@media(min-width:701px){
+  .project{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;gap:3.2vw!important}
+  .project-visual{min-height:390px!important}
+}
+@media(max-width:700px){
+  html{scroll-padding-top:82px!important}
+  section[id]{scroll-margin-top:82px!important}
+  .project-info{padding-top:4px!important}
+}
