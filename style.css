@@ -413,3 +413,59 @@ section[id]{scroll-margin-top:112px!important}
   section[id]{scroll-margin-top:82px!important}
   .project-info{padding-top:4px!important}
 }
+
+
+/* MOBILE NAVIGATION FIX — keep every page link visible and horizontally scrollable */
+@media(max-width:700px){
+  .site-header{
+    height:auto!important;
+    min-height:70px!important;
+    padding:12px 18px 8px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:center!important;
+    gap:8px!important;
+    overflow:visible!important;
+  }
+  .site-header .brand{
+    display:block!important;
+    width:max-content!important;
+    flex:none!important;
+  }
+  .site-header .header-note,
+  .site-header .menu-toggle{
+    display:none!important;
+  }
+  .site-header .nav-links{
+    display:flex!important;
+    position:static!important;
+    inset:auto!important;
+    width:100%!important;
+    max-width:100%!important;
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:18px!important;
+    padding:10px 2px 12px!important;
+    margin:0!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    white-space:nowrap!important;
+    -webkit-overflow-scrolling:touch!important;
+    scrollbar-width:thin!important;
+    scrollbar-color:#35d9ff #20202c!important;
+    background:transparent!important;
+    border:0!important;
+    border-bottom:1px solid #383848!important;
+  }
+  .site-header .nav-links a{
+    display:inline-flex!important;
+    flex:0 0 auto!important;
+    white-space:nowrap!important;
+    font-size:10px!important;
+    line-height:1.5!important;
+    padding:5px 0!important;
+  }
+}
